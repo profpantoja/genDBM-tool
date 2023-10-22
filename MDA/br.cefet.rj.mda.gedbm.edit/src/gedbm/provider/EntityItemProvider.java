@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.provider;
 
@@ -67,33 +63,11 @@ public class EntityItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCodePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addSubgroupOfPropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Code feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCodePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Entity_code_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_code_feature", "_UI_Entity_type"),
-				 GedbmPackage.Literals.ENTITY__CODE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -136,6 +110,28 @@ public class EntityItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_type_feature", "_UI_Entity_type"),
+				 GedbmPackage.Literals.ENTITY__TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -210,8 +206,8 @@ public class EntityItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Entity.class)) {
-			case GedbmPackage.ENTITY__CODE:
 			case GedbmPackage.ENTITY__NAME:
+			case GedbmPackage.ENTITY__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case GedbmPackage.ENTITY__IS_COMPOSED:

@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.provider;
 
@@ -64,33 +60,10 @@ public class CheckItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCodePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addConditionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Code feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCodePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Check_code_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Check_code_feature", "_UI_Check_type"),
-				 GedbmPackage.Literals.CHECK__CODE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -174,7 +147,6 @@ public class CheckItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Check.class)) {
-			case GedbmPackage.CHECK__CODE:
 			case GedbmPackage.CHECK__NAME:
 			case GedbmPackage.CHECK__CONDITION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

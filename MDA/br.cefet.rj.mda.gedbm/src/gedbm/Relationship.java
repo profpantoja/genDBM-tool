@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm;
 
@@ -18,15 +14,15 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link gedbm.Relationship#getCode <em>Code</em>}</li>
  *   <li>{@link gedbm.Relationship#getName <em>Name</em>}</li>
- *   <li>{@link gedbm.Relationship#getRelated <em>Related</em>}</li>
  *   <li>{@link gedbm.Relationship#getIsConstraint <em>Is Constraint</em>}</li>
  *   <li>{@link gedbm.Relationship#getIsMapping <em>Is Mapping</em>}</li>
  *   <li>{@link gedbm.Relationship#getWouldHasPrimary <em>Would Has Primary</em>}</li>
  *   <li>{@link gedbm.Relationship#getWouldHasForeign <em>Would Has Foreign</em>}</li>
  *   <li>{@link gedbm.Relationship#isIsAssociative <em>Is Associative</em>}</li>
  *   <li>{@link gedbm.Relationship#getEntity_relation_name <em>Entity relation name</em>}</li>
+ *   <li>{@link gedbm.Relationship#getType <em>Type</em>}</li>
+ *   <li>{@link gedbm.Relationship#getRelated <em>Related</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,32 +31,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Relationship extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Code</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Code</em>' attribute.
-	 * @see #setCode(int)
-	 * @see gedbm.GedbmPackage#getRelationship_Code()
-	 * @model
-	 * @generated
-	 */
-	int getCode();
-
-	/**
-	 * Sets the value of the '{@link gedbm.Relationship#getCode <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Code</em>' attribute.
-	 * @see #getCode()
-	 * @generated
-	 */
-	void setCode(int value);
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -86,22 +56,6 @@ public interface Relationship extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Related</b></em>' reference list.
-	 * The list contents are of type {@link gedbm.Entity}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Related</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Related</em>' reference list.
-	 * @see gedbm.GedbmPackage#getRelationship_Related()
-	 * @model lower="2"
-	 * @generated
-	 */
-	EList<Entity> getRelated();
 
 	/**
 	 * Returns the value of the '<em><b>Is Constraint</b></em>' containment reference list.
@@ -218,5 +172,50 @@ public interface Relationship extends EObject {
 	 * @generated
 	 */
 	void setEntity_relation_name(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link gedbm.RelationshipType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see gedbm.RelationshipType
+	 * @see #setType(RelationshipType)
+	 * @see gedbm.GedbmPackage#getRelationship_Type()
+	 * @model
+	 * @generated
+	 */
+	RelationshipType getType();
+
+	/**
+	 * Sets the value of the '{@link gedbm.Relationship#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see gedbm.RelationshipType
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(RelationshipType value);
+
+	/**
+	 * Returns the value of the '<em><b>Related</b></em>' reference list.
+	 * The list contents are of type {@link gedbm.Entity}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Related</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Related</em>' reference list.
+	 * @see gedbm.GedbmPackage#getRelationship_Related()
+	 * @model lower="2"
+	 * @generated
+	 */
+	EList<Entity> getRelated();
 
 } // Relationship

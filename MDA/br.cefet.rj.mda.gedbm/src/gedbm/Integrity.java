@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm;
 
@@ -16,7 +12,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link gedbm.Integrity#getCode <em>Code</em>}</li>
  *   <li>{@link gedbm.Integrity#isNot_null <em>Not null</em>}</li>
  *   <li>{@link gedbm.Integrity#isUnique <em>Unique</em>}</li>
  * </ul>
@@ -27,32 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Integrity extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Code</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Code</em>' attribute.
-	 * @see #setCode(int)
-	 * @see gedbm.GedbmPackage#getIntegrity_Code()
-	 * @model
-	 * @generated
-	 */
-	int getCode();
-
-	/**
-	 * Sets the value of the '{@link gedbm.Integrity#getCode <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Code</em>' attribute.
-	 * @see #getCode()
-	 * @generated
-	 */
-	void setCode(int value);
-
 	/**
 	 * Returns the value of the '<em><b>Not null</b></em>' attribute.
 	 * <!-- begin-user-doc -->

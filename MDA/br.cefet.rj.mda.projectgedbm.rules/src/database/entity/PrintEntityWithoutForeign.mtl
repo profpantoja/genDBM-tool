@@ -1,0 +1,21 @@
+[comment encoding = UTF-8 /]
+[module PrintEntityWithoutForeign('http://br.cefet.rj.mda.gedbm')]
+
+[import database::entity::field::ToField /]
+[import database::entity::key::PrintPrimaryKey /]
+[import database::entity::PrintGeograficEntity /]
+[import database::entity::field::features::PrintCheck /]
+
+[comment 
+*** Nesse template s�o geradas as tabelas que possuem chave prim�ria e n�o possuem chave estrangeira. 
+A chave prim�ria � obrigat�ria.  
+/]
+
+[template public PrintEntityWithoutForeign(aDataBaseName : String, aEntity : Entity)]
+[for (iEntity : Entity | aEntity) after(');')]
+CREATE TABLE [aDataBaseName/].[iEntity.name/] (
+	[if ( not iEntity.type.toString().equalsIgnoreCase('Conventional'))][PrintGeograficEntity(iEntity)/][/if]
+	[ToField(iEntity.isComposed)/][PrintPrimary(iEntity.hasPrimaryKey)/][if (iEntity.hasCheck->notEmpty())],[/if][PrintCheck(iEntity.hasCheck)/]
+[/for]
+
+[/template]

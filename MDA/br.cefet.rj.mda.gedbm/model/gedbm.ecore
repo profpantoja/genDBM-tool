@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gedbm"
-    nsURI="http://br.cefet.rj.mda.gedbm" nsPrefix="gedbm">
-  <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="isFormedOf" lowerBound="1"
-        eType="#//DataBase" containment="true"/>
-  </eClassifiers>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gedbm" nsURI="http://br.cefet.rj.mda.gedbm" nsPrefix="gedbm">
   <eClassifiers xsi:type="ecore:EClass" name="DataBase">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="has" lowerBound="1" upperBound="-1"
-        eType="#//Components" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isComposed" lowerBound="1"
         upperBound="-1" eType="#//Entity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasInteraction" upperBound="-1"
         eType="#//Relationship" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Components">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isComposed" lowerBound="1"
         upperBound="-1" eType="#//Field" containment="true"/>
@@ -32,12 +19,10 @@
         upperBound="-1" eType="#//PrimaryKey" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasCheck" upperBound="-1"
         eType="#//Check" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//EntityType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Relationship">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="related" lowerBound="2"
-        upperBound="-1" eType="#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isConstraint" lowerBound="1"
         upperBound="-1" eType="#//Cardinality" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isMapping" upperBound="-1"
@@ -48,14 +33,15 @@
         eType="#//ForeignKey" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAssociative" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="entity_relation_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//RelationshipType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="related" lowerBound="2"
+        upperBound="-1" eType="#//Entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Cardinality">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="limit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="referent" eType="#//Entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Field">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasForeignKey" upperBound="-1"
@@ -97,42 +83,70 @@
     <eLiterals name="doublePrecision" value="24"/>
     <eLiterals name="character" value="25"/>
     <eLiterals name="float" value="26"/>
+    <eLiterals name="Geometry" value="27"/>
+    <eLiterals name="Point" value="28"/>
+    <eLiterals name="LineString" value="29"/>
+    <eLiterals name="Polygon" value="30"/>
+    <eLiterals name="GeometryCollection" value="31"/>
+    <eLiterals name="MultiPoint" value="32"/>
+    <eLiterals name="MultiLineString" value="33"/>
+    <eLiterals name="MultiPolygon" value="34"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Integrity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="not_null" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unique" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumericLimit">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="limit_value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextLimit">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimaryKey">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isPrimary" lowerBound="1"
         upperBound="-1" eType="#//Field"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ForeignKey">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refersTo" eType="#//PrimaryKey"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isForeign" upperBound="-1"
         eType="#//Field"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="References" lowerBound="1"
         eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Check">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DefaultValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntityType">
+    <eLiterals name="Conventional"/>
+    <eLiterals name="NetworkClass" value="3"/>
+    <eLiterals name="AdjacentPolygons" value="1"/>
+    <eLiterals name="Tesselation" value="4"/>
+    <eLiterals name="Sampling" value="5"/>
+    <eLiterals name="Isoline" value="6"/>
+    <eLiterals name="Polygon" value="7"/>
+    <eLiterals name="Point" value="8"/>
+    <eLiterals name="Line" value="9"/>
+    <eLiterals name="Node" value="10"/>
+    <eLiterals name="UnidirectionalLine" value="11"/>
+    <eLiterals name="BidirectionalLine" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RelationshipType">
+    <eLiterals name="Simple"/>
+    <eLiterals name="Spatial" value="1"/>
+    <eLiterals name="Agregation" value="2"/>
+    <eLiterals name="SpatialAgregation" value="3"/>
+    <eLiterals name="NetworkAssociation" value="4"/>
+    <eLiterals name="DisjointPartial" value="5"/>
+    <eLiterals name="DisjointTotal" value="6"/>
+    <eLiterals name="OverlappingPartial" value="7"/>
+    <eLiterals name="OverlappingTotal" value="8"/>
+    <eLiterals name="Shape" value="9"/>
+    <eLiterals name="Scale" value="10"/>
   </eClassifiers>
 </ecore:EPackage>

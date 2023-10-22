@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.provider;
 
@@ -67,35 +63,13 @@ public class RelationshipItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCodePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addRelatedPropertyDescriptor(object);
 			addIsAssociativePropertyDescriptor(object);
 			addEntity_relation_namePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
+			addRelatedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Code feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCodePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Relationship_code_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Relationship_code_feature", "_UI_Relationship_type"),
-				 GedbmPackage.Literals.RELATIONSHIP__CODE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -116,28 +90,6 @@ public class RelationshipItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Related feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRelatedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Relationship_related_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Relationship_related_feature", "_UI_Relationship_type"),
-				 GedbmPackage.Literals.RELATIONSHIP__RELATED,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
@@ -182,6 +134,50 @@ public class RelationshipItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Relationship_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Relationship_type_feature", "_UI_Relationship_type"),
+				 GedbmPackage.Literals.RELATIONSHIP__TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Related feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRelatedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Relationship_related_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Relationship_related_feature", "_UI_Relationship_type"),
+				 GedbmPackage.Literals.RELATIONSHIP__RELATED,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -256,10 +252,10 @@ public class RelationshipItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Relationship.class)) {
-			case GedbmPackage.RELATIONSHIP__CODE:
 			case GedbmPackage.RELATIONSHIP__NAME:
 			case GedbmPackage.RELATIONSHIP__IS_ASSOCIATIVE:
 			case GedbmPackage.RELATIONSHIP__ENTITY_RELATION_NAME:
+			case GedbmPackage.RELATIONSHIP__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case GedbmPackage.RELATIONSHIP__IS_CONSTRAINT:

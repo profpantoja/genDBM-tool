@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.impl;
 
@@ -16,7 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +21,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link gedbm.impl.CardinalityImpl#getCode <em>Code</em>}</li>
  *   <li>{@link gedbm.impl.CardinalityImpl#getLimit <em>Limit</em>}</li>
  *   <li>{@link gedbm.impl.CardinalityImpl#getReferent <em>Referent</em>}</li>
  * </ul>
@@ -33,27 +28,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class CardinalityImpl extends EObjectImpl implements Cardinality {
-	/**
-	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int CODE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected int code = CODE_EDEFAULT;
-
+public class CardinalityImpl extends MinimalEObjectImpl.Container implements Cardinality {
 	/**
 	 * The default value of the '{@link #getLimit() <em>Limit</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -101,27 +76,6 @@ public class CardinalityImpl extends EObjectImpl implements Cardinality {
 	@Override
 	protected EClass eStaticClass() {
 		return GedbmPackage.Literals.CARDINALITY;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getCode() {
-		return code;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCode(int newCode) {
-		int oldCode = code;
-		code = newCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GedbmPackage.CARDINALITY__CODE, oldCode, code));
 	}
 
 	/**
@@ -191,8 +145,6 @@ public class CardinalityImpl extends EObjectImpl implements Cardinality {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GedbmPackage.CARDINALITY__CODE:
-				return getCode();
 			case GedbmPackage.CARDINALITY__LIMIT:
 				return getLimit();
 			case GedbmPackage.CARDINALITY__REFERENT:
@@ -210,9 +162,6 @@ public class CardinalityImpl extends EObjectImpl implements Cardinality {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GedbmPackage.CARDINALITY__CODE:
-				setCode((Integer)newValue);
-				return;
 			case GedbmPackage.CARDINALITY__LIMIT:
 				setLimit((String)newValue);
 				return;
@@ -231,9 +180,6 @@ public class CardinalityImpl extends EObjectImpl implements Cardinality {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GedbmPackage.CARDINALITY__CODE:
-				setCode(CODE_EDEFAULT);
-				return;
 			case GedbmPackage.CARDINALITY__LIMIT:
 				setLimit(LIMIT_EDEFAULT);
 				return;
@@ -252,8 +198,6 @@ public class CardinalityImpl extends EObjectImpl implements Cardinality {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GedbmPackage.CARDINALITY__CODE:
-				return code != CODE_EDEFAULT;
 			case GedbmPackage.CARDINALITY__LIMIT:
 				return LIMIT_EDEFAULT == null ? limit != null : !LIMIT_EDEFAULT.equals(limit);
 			case GedbmPackage.CARDINALITY__REFERENT:
@@ -272,9 +216,7 @@ public class CardinalityImpl extends EObjectImpl implements Cardinality {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (code: ");
-		result.append(code);
-		result.append(", limit: ");
+		result.append(" (limit: ");
 		result.append(limit);
 		result.append(')');
 		return result.toString();

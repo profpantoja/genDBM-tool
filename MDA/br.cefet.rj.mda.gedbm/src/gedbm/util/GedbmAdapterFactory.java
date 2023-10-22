@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.util;
 
@@ -72,16 +68,8 @@ public class GedbmAdapterFactory extends AdapterFactoryImpl {
 	protected GedbmSwitch<Adapter> modelSwitch =
 		new GedbmSwitch<Adapter>() {
 			@Override
-			public Adapter caseModel(Model object) {
-				return createModelAdapter();
-			}
-			@Override
 			public Adapter caseDataBase(DataBase object) {
 				return createDataBaseAdapter();
-			}
-			@Override
-			public Adapter caseComponents(Components object) {
-				return createComponentsAdapter();
 			}
 			@Override
 			public Adapter caseEntity(Entity object) {
@@ -148,20 +136,6 @@ public class GedbmAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link gedbm.Model <em>Model</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see gedbm.Model
-	 * @generated
-	 */
-	public Adapter createModelAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link gedbm.DataBase <em>Data Base</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -172,20 +146,6 @@ public class GedbmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDataBaseAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link gedbm.Components <em>Components</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see gedbm.Components
-	 * @generated
-	 */
-	public Adapter createComponentsAdapter() {
 		return null;
 	}
 

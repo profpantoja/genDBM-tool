@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm;
 
@@ -19,6 +15,7 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -61,43 +58,6 @@ public interface GedbmPackage extends EPackage {
 	GedbmPackage eINSTANCE = gedbm.impl.GedbmPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link gedbm.impl.ModelImpl <em>Model</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see gedbm.impl.ModelImpl
-	 * @see gedbm.impl.GedbmPackageImpl#getModel()
-	 * @generated
-	 */
-	int MODEL = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Is Formed Of</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL__IS_FORMED_OF = 1;
-
-	/**
-	 * The number of structural features of the '<em>Model</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_FEATURE_COUNT = 2;
-
-	/**
 	 * The meta object id for the '{@link gedbm.impl.DataBaseImpl <em>Data Base</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,7 +65,7 @@ public interface GedbmPackage extends EPackage {
 	 * @see gedbm.impl.GedbmPackageImpl#getDataBase()
 	 * @generated
 	 */
-	int DATA_BASE = 1;
+	int DATA_BASE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -117,22 +77,13 @@ public interface GedbmPackage extends EPackage {
 	int DATA_BASE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Has</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_BASE__HAS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Is Composed</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_BASE__IS_COMPOSED = 2;
+	int DATA_BASE__IS_COMPOSED = 1;
 
 	/**
 	 * The feature id for the '<em><b>Has Interaction</b></em>' containment reference list.
@@ -141,7 +92,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_BASE__HAS_INTERACTION = 3;
+	int DATA_BASE__HAS_INTERACTION = 2;
 
 	/**
 	 * The number of structural features of the '<em>Data Base</em>' class.
@@ -150,35 +101,16 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_BASE_FEATURE_COUNT = 4;
+	int DATA_BASE_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link gedbm.impl.ComponentsImpl <em>Components</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see gedbm.impl.ComponentsImpl
-	 * @see gedbm.impl.GedbmPackageImpl#getComponents()
-	 * @generated
-	 */
-	int COMPONENTS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The number of operations of the '<em>Data Base</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENTS__NAME = 0;
-
-	/**
-	 * The number of structural features of the '<em>Components</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENTS_FEATURE_COUNT = 1;
+	int DATA_BASE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link gedbm.impl.EntityImpl <em>Entity</em>}' class.
@@ -188,16 +120,7 @@ public interface GedbmPackage extends EPackage {
 	 * @see gedbm.impl.GedbmPackageImpl#getEntity()
 	 * @generated
 	 */
-	int ENTITY = 3;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY__CODE = 0;
+	int ENTITY = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -206,7 +129,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__NAME = 1;
+	int ENTITY__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Is Composed</b></em>' containment reference list.
@@ -215,7 +138,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__IS_COMPOSED = 2;
+	int ENTITY__IS_COMPOSED = 1;
 
 	/**
 	 * The feature id for the '<em><b>Subgroup Of</b></em>' reference.
@@ -224,7 +147,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__SUBGROUP_OF = 3;
+	int ENTITY__SUBGROUP_OF = 2;
 
 	/**
 	 * The feature id for the '<em><b>Has Foreign Key</b></em>' containment reference list.
@@ -233,7 +156,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__HAS_FOREIGN_KEY = 4;
+	int ENTITY__HAS_FOREIGN_KEY = 3;
 
 	/**
 	 * The feature id for the '<em><b>Has Primary Key</b></em>' containment reference list.
@@ -242,7 +165,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__HAS_PRIMARY_KEY = 5;
+	int ENTITY__HAS_PRIMARY_KEY = 4;
 
 	/**
 	 * The feature id for the '<em><b>Has Check</b></em>' containment reference list.
@@ -251,7 +174,16 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__HAS_CHECK = 6;
+	int ENTITY__HAS_CHECK = 5;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__TYPE = 6;
 
 	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
@@ -263,6 +195,15 @@ public interface GedbmPackage extends EPackage {
 	int ENTITY_FEATURE_COUNT = 7;
 
 	/**
+	 * The number of operations of the '<em>Entity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link gedbm.impl.RelationshipImpl <em>Relationship</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -270,16 +211,7 @@ public interface GedbmPackage extends EPackage {
 	 * @see gedbm.impl.GedbmPackageImpl#getRelationship()
 	 * @generated
 	 */
-	int RELATIONSHIP = 4;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONSHIP__CODE = 0;
+	int RELATIONSHIP = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -288,16 +220,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIP__NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Related</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONSHIP__RELATED = 2;
+	int RELATIONSHIP__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Is Constraint</b></em>' containment reference list.
@@ -306,7 +229,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIP__IS_CONSTRAINT = 3;
+	int RELATIONSHIP__IS_CONSTRAINT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Is Mapping</b></em>' containment reference list.
@@ -315,7 +238,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIP__IS_MAPPING = 4;
+	int RELATIONSHIP__IS_MAPPING = 2;
 
 	/**
 	 * The feature id for the '<em><b>Would Has Primary</b></em>' containment reference list.
@@ -324,7 +247,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIP__WOULD_HAS_PRIMARY = 5;
+	int RELATIONSHIP__WOULD_HAS_PRIMARY = 3;
 
 	/**
 	 * The feature id for the '<em><b>Would Has Foreign</b></em>' containment reference list.
@@ -333,7 +256,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIP__WOULD_HAS_FOREIGN = 6;
+	int RELATIONSHIP__WOULD_HAS_FOREIGN = 4;
 
 	/**
 	 * The feature id for the '<em><b>Is Associative</b></em>' attribute.
@@ -342,7 +265,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIP__IS_ASSOCIATIVE = 7;
+	int RELATIONSHIP__IS_ASSOCIATIVE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Entity relation name</b></em>' attribute.
@@ -351,7 +274,25 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIP__ENTITY_RELATION_NAME = 8;
+	int RELATIONSHIP__ENTITY_RELATION_NAME = 6;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIP__TYPE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Related</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIP__RELATED = 8;
 
 	/**
 	 * The number of structural features of the '<em>Relationship</em>' class.
@@ -363,6 +304,15 @@ public interface GedbmPackage extends EPackage {
 	int RELATIONSHIP_FEATURE_COUNT = 9;
 
 	/**
+	 * The number of operations of the '<em>Relationship</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIP_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link gedbm.impl.CardinalityImpl <em>Cardinality</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -370,16 +320,7 @@ public interface GedbmPackage extends EPackage {
 	 * @see gedbm.impl.GedbmPackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 5;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARDINALITY__CODE = 0;
+	int CARDINALITY = 3;
 
 	/**
 	 * The feature id for the '<em><b>Limit</b></em>' attribute.
@@ -388,7 +329,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CARDINALITY__LIMIT = 1;
+	int CARDINALITY__LIMIT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Referent</b></em>' reference.
@@ -397,7 +338,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CARDINALITY__REFERENT = 2;
+	int CARDINALITY__REFERENT = 1;
 
 	/**
 	 * The number of structural features of the '<em>Cardinality</em>' class.
@@ -406,7 +347,16 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CARDINALITY_FEATURE_COUNT = 3;
+	int CARDINALITY_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Cardinality</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CARDINALITY_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link gedbm.impl.FieldImpl <em>Field</em>}' class.
@@ -416,16 +366,7 @@ public interface GedbmPackage extends EPackage {
 	 * @see gedbm.impl.GedbmPackageImpl#getField()
 	 * @generated
 	 */
-	int FIELD = 6;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIELD__CODE = 0;
+	int FIELD = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -434,7 +375,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__NAME = 1;
+	int FIELD__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -443,7 +384,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__TYPE = 2;
+	int FIELD__TYPE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Has Foreign Key</b></em>' reference list.
@@ -452,7 +393,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__HAS_FOREIGN_KEY = 3;
+	int FIELD__HAS_FOREIGN_KEY = 2;
 
 	/**
 	 * The feature id for the '<em><b>Has Text Limit</b></em>' containment reference.
@@ -461,7 +402,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__HAS_TEXT_LIMIT = 4;
+	int FIELD__HAS_TEXT_LIMIT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Has Numeric Limit</b></em>' containment reference.
@@ -470,7 +411,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__HAS_NUMERIC_LIMIT = 5;
+	int FIELD__HAS_NUMERIC_LIMIT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Has Integrity</b></em>' containment reference.
@@ -479,7 +420,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__HAS_INTEGRITY = 6;
+	int FIELD__HAS_INTEGRITY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Has Default Value</b></em>' containment reference.
@@ -488,7 +429,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__HAS_DEFAULT_VALUE = 7;
+	int FIELD__HAS_DEFAULT_VALUE = 6;
 
 	/**
 	 * The number of structural features of the '<em>Field</em>' class.
@@ -497,7 +438,16 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_FEATURE_COUNT = 8;
+	int FIELD_FEATURE_COUNT = 7;
+
+	/**
+	 * The number of operations of the '<em>Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link gedbm.impl.IntegrityImpl <em>Integrity</em>}' class.
@@ -507,16 +457,7 @@ public interface GedbmPackage extends EPackage {
 	 * @see gedbm.impl.GedbmPackageImpl#getIntegrity()
 	 * @generated
 	 */
-	int INTEGRITY = 7;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGRITY__CODE = 0;
+	int INTEGRITY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Not null</b></em>' attribute.
@@ -525,7 +466,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRITY__NOT_NULL = 1;
+	int INTEGRITY__NOT_NULL = 0;
 
 	/**
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
@@ -534,7 +475,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRITY__UNIQUE = 2;
+	int INTEGRITY__UNIQUE = 1;
 
 	/**
 	 * The number of structural features of the '<em>Integrity</em>' class.
@@ -543,7 +484,16 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRITY_FEATURE_COUNT = 3;
+	int INTEGRITY_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Integrity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRITY_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link gedbm.impl.NumericLimitImpl <em>Numeric Limit</em>}' class.
@@ -553,16 +503,7 @@ public interface GedbmPackage extends EPackage {
 	 * @see gedbm.impl.GedbmPackageImpl#getNumericLimit()
 	 * @generated
 	 */
-	int NUMERIC_LIMIT = 8;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUMERIC_LIMIT__CODE = 0;
+	int NUMERIC_LIMIT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Limit value</b></em>' attribute.
@@ -571,7 +512,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NUMERIC_LIMIT__LIMIT_VALUE = 1;
+	int NUMERIC_LIMIT__LIMIT_VALUE = 0;
 
 	/**
 	 * The number of structural features of the '<em>Numeric Limit</em>' class.
@@ -580,7 +521,16 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NUMERIC_LIMIT_FEATURE_COUNT = 2;
+	int NUMERIC_LIMIT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Numeric Limit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_LIMIT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link gedbm.impl.TextLimitImpl <em>Text Limit</em>}' class.
@@ -590,16 +540,7 @@ public interface GedbmPackage extends EPackage {
 	 * @see gedbm.impl.GedbmPackageImpl#getTextLimit()
 	 * @generated
 	 */
-	int TEXT_LIMIT = 9;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_LIMIT__CODE = 0;
+	int TEXT_LIMIT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -608,7 +549,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_LIMIT__SIZE = 1;
+	int TEXT_LIMIT__SIZE = 0;
 
 	/**
 	 * The number of structural features of the '<em>Text Limit</em>' class.
@@ -617,7 +558,16 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_LIMIT_FEATURE_COUNT = 2;
+	int TEXT_LIMIT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Text Limit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_LIMIT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link gedbm.impl.PrimaryKeyImpl <em>Primary Key</em>}' class.
@@ -627,16 +577,7 @@ public interface GedbmPackage extends EPackage {
 	 * @see gedbm.impl.GedbmPackageImpl#getPrimaryKey()
 	 * @generated
 	 */
-	int PRIMARY_KEY = 10;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRIMARY_KEY__CODE = 0;
+	int PRIMARY_KEY = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -645,7 +586,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMARY_KEY__NAME = 1;
+	int PRIMARY_KEY__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Is Primary</b></em>' reference list.
@@ -654,7 +595,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMARY_KEY__IS_PRIMARY = 2;
+	int PRIMARY_KEY__IS_PRIMARY = 1;
 
 	/**
 	 * The number of structural features of the '<em>Primary Key</em>' class.
@@ -663,7 +604,16 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMARY_KEY_FEATURE_COUNT = 3;
+	int PRIMARY_KEY_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Primary Key</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMARY_KEY_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link gedbm.impl.ForeignKeyImpl <em>Foreign Key</em>}' class.
@@ -673,25 +623,7 @@ public interface GedbmPackage extends EPackage {
 	 * @see gedbm.impl.GedbmPackageImpl#getForeignKey()
 	 * @generated
 	 */
-	int FOREIGN_KEY = 11;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOREIGN_KEY__CODE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOREIGN_KEY__NAME = 1;
+	int FOREIGN_KEY = 9;
 
 	/**
 	 * The feature id for the '<em><b>Refers To</b></em>' reference.
@@ -700,7 +632,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FOREIGN_KEY__REFERS_TO = 2;
+	int FOREIGN_KEY__REFERS_TO = 0;
 
 	/**
 	 * The feature id for the '<em><b>Is Foreign</b></em>' reference list.
@@ -709,7 +641,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FOREIGN_KEY__IS_FOREIGN = 3;
+	int FOREIGN_KEY__IS_FOREIGN = 1;
 
 	/**
 	 * The feature id for the '<em><b>References</b></em>' reference.
@@ -718,7 +650,16 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FOREIGN_KEY__REFERENCES = 4;
+	int FOREIGN_KEY__REFERENCES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOREIGN_KEY__NAME = 3;
 
 	/**
 	 * The number of structural features of the '<em>Foreign Key</em>' class.
@@ -727,7 +668,16 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FOREIGN_KEY_FEATURE_COUNT = 5;
+	int FOREIGN_KEY_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Foreign Key</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOREIGN_KEY_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link gedbm.impl.CheckImpl <em>Check</em>}' class.
@@ -737,16 +687,7 @@ public interface GedbmPackage extends EPackage {
 	 * @see gedbm.impl.GedbmPackageImpl#getCheck()
 	 * @generated
 	 */
-	int CHECK = 12;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHECK__CODE = 0;
+	int CHECK = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -755,7 +696,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK__NAME = 1;
+	int CHECK__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' attribute.
@@ -764,7 +705,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK__CONDITION = 2;
+	int CHECK__CONDITION = 1;
 
 	/**
 	 * The number of structural features of the '<em>Check</em>' class.
@@ -773,7 +714,16 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_FEATURE_COUNT = 3;
+	int CHECK_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Check</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHECK_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link gedbm.impl.DefaultValueImpl <em>Default Value</em>}' class.
@@ -783,16 +733,7 @@ public interface GedbmPackage extends EPackage {
 	 * @see gedbm.impl.GedbmPackageImpl#getDefaultValue()
 	 * @generated
 	 */
-	int DEFAULT_VALUE = 13;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEFAULT_VALUE__CODE = 0;
+	int DEFAULT_VALUE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -801,7 +742,7 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEFAULT_VALUE__VALUE = 1;
+	int DEFAULT_VALUE__VALUE = 0;
 
 	/**
 	 * The number of structural features of the '<em>Default Value</em>' class.
@@ -810,7 +751,16 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEFAULT_VALUE_FEATURE_COUNT = 2;
+	int DEFAULT_VALUE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Default Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_VALUE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link gedbm.Type <em>Type</em>}' enum.
@@ -820,40 +770,28 @@ public interface GedbmPackage extends EPackage {
 	 * @see gedbm.impl.GedbmPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 14;
-
-
-	/**
-	 * Returns the meta object for class '{@link gedbm.Model <em>Model</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Model</em>'.
-	 * @see gedbm.Model
-	 * @generated
-	 */
-	EClass getModel();
+	int TYPE = 12;
 
 	/**
-	 * Returns the meta object for the attribute '{@link gedbm.Model#getName <em>Name</em>}'.
+	 * The meta object id for the '{@link gedbm.EntityType <em>Entity Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see gedbm.Model#getName()
-	 * @see #getModel()
+	 * @see gedbm.EntityType
+	 * @see gedbm.impl.GedbmPackageImpl#getEntityType()
 	 * @generated
 	 */
-	EAttribute getModel_Name();
+	int ENTITY_TYPE = 13;
 
 	/**
-	 * Returns the meta object for the containment reference '{@link gedbm.Model#getIsFormedOf <em>Is Formed Of</em>}'.
+	 * The meta object id for the '{@link gedbm.RelationshipType <em>Relationship Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Is Formed Of</em>'.
-	 * @see gedbm.Model#getIsFormedOf()
-	 * @see #getModel()
+	 * @see gedbm.RelationshipType
+	 * @see gedbm.impl.GedbmPackageImpl#getRelationshipType()
 	 * @generated
 	 */
-	EReference getModel_IsFormedOf();
+	int RELATIONSHIP_TYPE = 14;
+
 
 	/**
 	 * Returns the meta object for class '{@link gedbm.DataBase <em>Data Base</em>}'.
@@ -875,17 +813,6 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDataBase_Name();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link gedbm.DataBase#getHas <em>Has</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Has</em>'.
-	 * @see gedbm.DataBase#getHas()
-	 * @see #getDataBase()
-	 * @generated
-	 */
-	EReference getDataBase_Has();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link gedbm.DataBase#getIsComposed <em>Is Composed</em>}'.
@@ -910,27 +837,6 @@ public interface GedbmPackage extends EPackage {
 	EReference getDataBase_HasInteraction();
 
 	/**
-	 * Returns the meta object for class '{@link gedbm.Components <em>Components</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Components</em>'.
-	 * @see gedbm.Components
-	 * @generated
-	 */
-	EClass getComponents();
-
-	/**
-	 * Returns the meta object for the attribute '{@link gedbm.Components#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see gedbm.Components#getName()
-	 * @see #getComponents()
-	 * @generated
-	 */
-	EAttribute getComponents_Name();
-
-	/**
 	 * Returns the meta object for class '{@link gedbm.Entity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -939,17 +845,6 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntity();
-
-	/**
-	 * Returns the meta object for the attribute '{@link gedbm.Entity#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Code</em>'.
-	 * @see gedbm.Entity#getCode()
-	 * @see #getEntity()
-	 * @generated
-	 */
-	EAttribute getEntity_Code();
 
 	/**
 	 * Returns the meta object for the attribute '{@link gedbm.Entity#getName <em>Name</em>}'.
@@ -1018,6 +913,17 @@ public interface GedbmPackage extends EPackage {
 	EReference getEntity_HasCheck();
 
 	/**
+	 * Returns the meta object for the attribute '{@link gedbm.Entity#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see gedbm.Entity#getType()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EAttribute getEntity_Type();
+
+	/**
 	 * Returns the meta object for class '{@link gedbm.Relationship <em>Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1026,17 +932,6 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRelationship();
-
-	/**
-	 * Returns the meta object for the attribute '{@link gedbm.Relationship#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Code</em>'.
-	 * @see gedbm.Relationship#getCode()
-	 * @see #getRelationship()
-	 * @generated
-	 */
-	EAttribute getRelationship_Code();
 
 	/**
 	 * Returns the meta object for the attribute '{@link gedbm.Relationship#getName <em>Name</em>}'.
@@ -1048,17 +943,6 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRelationship_Name();
-
-	/**
-	 * Returns the meta object for the reference list '{@link gedbm.Relationship#getRelated <em>Related</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Related</em>'.
-	 * @see gedbm.Relationship#getRelated()
-	 * @see #getRelationship()
-	 * @generated
-	 */
-	EReference getRelationship_Related();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link gedbm.Relationship#getIsConstraint <em>Is Constraint</em>}'.
@@ -1127,6 +1011,28 @@ public interface GedbmPackage extends EPackage {
 	EAttribute getRelationship_Entity_relation_name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link gedbm.Relationship#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see gedbm.Relationship#getType()
+	 * @see #getRelationship()
+	 * @generated
+	 */
+	EAttribute getRelationship_Type();
+
+	/**
+	 * Returns the meta object for the reference list '{@link gedbm.Relationship#getRelated <em>Related</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Related</em>'.
+	 * @see gedbm.Relationship#getRelated()
+	 * @see #getRelationship()
+	 * @generated
+	 */
+	EReference getRelationship_Related();
+
+	/**
 	 * Returns the meta object for class '{@link gedbm.Cardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1135,17 +1041,6 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCardinality();
-
-	/**
-	 * Returns the meta object for the attribute '{@link gedbm.Cardinality#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Code</em>'.
-	 * @see gedbm.Cardinality#getCode()
-	 * @see #getCardinality()
-	 * @generated
-	 */
-	EAttribute getCardinality_Code();
 
 	/**
 	 * Returns the meta object for the attribute '{@link gedbm.Cardinality#getLimit <em>Limit</em>}'.
@@ -1178,17 +1073,6 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getField();
-
-	/**
-	 * Returns the meta object for the attribute '{@link gedbm.Field#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Code</em>'.
-	 * @see gedbm.Field#getCode()
-	 * @see #getField()
-	 * @generated
-	 */
-	EAttribute getField_Code();
 
 	/**
 	 * Returns the meta object for the attribute '{@link gedbm.Field#getName <em>Name</em>}'.
@@ -1278,17 +1162,6 @@ public interface GedbmPackage extends EPackage {
 	EClass getIntegrity();
 
 	/**
-	 * Returns the meta object for the attribute '{@link gedbm.Integrity#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Code</em>'.
-	 * @see gedbm.Integrity#getCode()
-	 * @see #getIntegrity()
-	 * @generated
-	 */
-	EAttribute getIntegrity_Code();
-
-	/**
 	 * Returns the meta object for the attribute '{@link gedbm.Integrity#isNot_null <em>Not null</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1321,17 +1194,6 @@ public interface GedbmPackage extends EPackage {
 	EClass getNumericLimit();
 
 	/**
-	 * Returns the meta object for the attribute '{@link gedbm.NumericLimit#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Code</em>'.
-	 * @see gedbm.NumericLimit#getCode()
-	 * @see #getNumericLimit()
-	 * @generated
-	 */
-	EAttribute getNumericLimit_Code();
-
-	/**
 	 * Returns the meta object for the attribute '{@link gedbm.NumericLimit#getLimit_value <em>Limit value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1353,17 +1215,6 @@ public interface GedbmPackage extends EPackage {
 	EClass getTextLimit();
 
 	/**
-	 * Returns the meta object for the attribute '{@link gedbm.TextLimit#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Code</em>'.
-	 * @see gedbm.TextLimit#getCode()
-	 * @see #getTextLimit()
-	 * @generated
-	 */
-	EAttribute getTextLimit_Code();
-
-	/**
 	 * Returns the meta object for the attribute '{@link gedbm.TextLimit#getSize <em>Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1383,17 +1234,6 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPrimaryKey();
-
-	/**
-	 * Returns the meta object for the attribute '{@link gedbm.PrimaryKey#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Code</em>'.
-	 * @see gedbm.PrimaryKey#getCode()
-	 * @see #getPrimaryKey()
-	 * @generated
-	 */
-	EAttribute getPrimaryKey_Code();
 
 	/**
 	 * Returns the meta object for the attribute '{@link gedbm.PrimaryKey#getName <em>Name</em>}'.
@@ -1426,28 +1266,6 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getForeignKey();
-
-	/**
-	 * Returns the meta object for the attribute '{@link gedbm.ForeignKey#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Code</em>'.
-	 * @see gedbm.ForeignKey#getCode()
-	 * @see #getForeignKey()
-	 * @generated
-	 */
-	EAttribute getForeignKey_Code();
-
-	/**
-	 * Returns the meta object for the attribute '{@link gedbm.ForeignKey#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see gedbm.ForeignKey#getName()
-	 * @see #getForeignKey()
-	 * @generated
-	 */
-	EAttribute getForeignKey_Name();
 
 	/**
 	 * Returns the meta object for the reference '{@link gedbm.ForeignKey#getRefersTo <em>Refers To</em>}'.
@@ -1483,6 +1301,17 @@ public interface GedbmPackage extends EPackage {
 	EReference getForeignKey_References();
 
 	/**
+	 * Returns the meta object for the attribute '{@link gedbm.ForeignKey#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see gedbm.ForeignKey#getName()
+	 * @see #getForeignKey()
+	 * @generated
+	 */
+	EAttribute getForeignKey_Name();
+
+	/**
 	 * Returns the meta object for class '{@link gedbm.Check <em>Check</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1491,17 +1320,6 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCheck();
-
-	/**
-	 * Returns the meta object for the attribute '{@link gedbm.Check#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Code</em>'.
-	 * @see gedbm.Check#getCode()
-	 * @see #getCheck()
-	 * @generated
-	 */
-	EAttribute getCheck_Code();
 
 	/**
 	 * Returns the meta object for the attribute '{@link gedbm.Check#getName <em>Name</em>}'.
@@ -1536,17 +1354,6 @@ public interface GedbmPackage extends EPackage {
 	EClass getDefaultValue();
 
 	/**
-	 * Returns the meta object for the attribute '{@link gedbm.DefaultValue#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Code</em>'.
-	 * @see gedbm.DefaultValue#getCode()
-	 * @see #getDefaultValue()
-	 * @generated
-	 */
-	EAttribute getDefaultValue_Code();
-
-	/**
 	 * Returns the meta object for the attribute '{@link gedbm.DefaultValue#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1568,6 +1375,26 @@ public interface GedbmPackage extends EPackage {
 	EEnum getType();
 
 	/**
+	 * Returns the meta object for enum '{@link gedbm.EntityType <em>Entity Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Entity Type</em>'.
+	 * @see gedbm.EntityType
+	 * @generated
+	 */
+	EEnum getEntityType();
+
+	/**
+	 * Returns the meta object for enum '{@link gedbm.RelationshipType <em>Relationship Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Relationship Type</em>'.
+	 * @see gedbm.RelationshipType
+	 * @generated
+	 */
+	EEnum getRelationshipType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1582,6 +1409,7 @@ public interface GedbmPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
@@ -1589,32 +1417,6 @@ public interface GedbmPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link gedbm.impl.ModelImpl <em>Model</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see gedbm.impl.ModelImpl
-		 * @see gedbm.impl.GedbmPackageImpl#getModel()
-		 * @generated
-		 */
-		EClass MODEL = eINSTANCE.getModel();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MODEL__NAME = eINSTANCE.getModel_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Formed Of</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL__IS_FORMED_OF = eINSTANCE.getModel_IsFormedOf();
-
 		/**
 		 * The meta object literal for the '{@link gedbm.impl.DataBaseImpl <em>Data Base</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -1634,14 +1436,6 @@ public interface GedbmPackage extends EPackage {
 		EAttribute DATA_BASE__NAME = eINSTANCE.getDataBase_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Has</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_BASE__HAS = eINSTANCE.getDataBase_Has();
-
-		/**
 		 * The meta object literal for the '<em><b>Is Composed</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1658,24 +1452,6 @@ public interface GedbmPackage extends EPackage {
 		EReference DATA_BASE__HAS_INTERACTION = eINSTANCE.getDataBase_HasInteraction();
 
 		/**
-		 * The meta object literal for the '{@link gedbm.impl.ComponentsImpl <em>Components</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see gedbm.impl.ComponentsImpl
-		 * @see gedbm.impl.GedbmPackageImpl#getComponents()
-		 * @generated
-		 */
-		EClass COMPONENTS = eINSTANCE.getComponents();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENTS__NAME = eINSTANCE.getComponents_Name();
-
-		/**
 		 * The meta object literal for the '{@link gedbm.impl.EntityImpl <em>Entity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1684,14 +1460,6 @@ public interface GedbmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY = eINSTANCE.getEntity();
-
-		/**
-		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENTITY__CODE = eINSTANCE.getEntity_Code();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1742,6 +1510,14 @@ public interface GedbmPackage extends EPackage {
 		EReference ENTITY__HAS_CHECK = eINSTANCE.getEntity_HasCheck();
 
 		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__TYPE = eINSTANCE.getEntity_Type();
+
+		/**
 		 * The meta object literal for the '{@link gedbm.impl.RelationshipImpl <em>Relationship</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1752,28 +1528,12 @@ public interface GedbmPackage extends EPackage {
 		EClass RELATIONSHIP = eINSTANCE.getRelationship();
 
 		/**
-		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RELATIONSHIP__CODE = eINSTANCE.getRelationship_Code();
-
-		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute RELATIONSHIP__NAME = eINSTANCE.getRelationship_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Related</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RELATIONSHIP__RELATED = eINSTANCE.getRelationship_Related();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Constraint</b></em>' containment reference list feature.
@@ -1824,6 +1584,22 @@ public interface GedbmPackage extends EPackage {
 		EAttribute RELATIONSHIP__ENTITY_RELATION_NAME = eINSTANCE.getRelationship_Entity_relation_name();
 
 		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELATIONSHIP__TYPE = eINSTANCE.getRelationship_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Related</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATIONSHIP__RELATED = eINSTANCE.getRelationship_Related();
+
+		/**
 		 * The meta object literal for the '{@link gedbm.impl.CardinalityImpl <em>Cardinality</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1832,14 +1608,6 @@ public interface GedbmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CARDINALITY = eINSTANCE.getCardinality();
-
-		/**
-		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CARDINALITY__CODE = eINSTANCE.getCardinality_Code();
 
 		/**
 		 * The meta object literal for the '<em><b>Limit</b></em>' attribute feature.
@@ -1866,14 +1634,6 @@ public interface GedbmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FIELD = eINSTANCE.getField();
-
-		/**
-		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FIELD__CODE = eINSTANCE.getField_Code();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1942,14 +1702,6 @@ public interface GedbmPackage extends EPackage {
 		EClass INTEGRITY = eINSTANCE.getIntegrity();
 
 		/**
-		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INTEGRITY__CODE = eINSTANCE.getIntegrity_Code();
-
-		/**
 		 * The meta object literal for the '<em><b>Not null</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1976,14 +1728,6 @@ public interface GedbmPackage extends EPackage {
 		EClass NUMERIC_LIMIT = eINSTANCE.getNumericLimit();
 
 		/**
-		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NUMERIC_LIMIT__CODE = eINSTANCE.getNumericLimit_Code();
-
-		/**
 		 * The meta object literal for the '<em><b>Limit value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2002,14 +1746,6 @@ public interface GedbmPackage extends EPackage {
 		EClass TEXT_LIMIT = eINSTANCE.getTextLimit();
 
 		/**
-		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TEXT_LIMIT__CODE = eINSTANCE.getTextLimit_Code();
-
-		/**
 		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2026,14 +1762,6 @@ public interface GedbmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PRIMARY_KEY = eINSTANCE.getPrimaryKey();
-
-		/**
-		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PRIMARY_KEY__CODE = eINSTANCE.getPrimaryKey_Code();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2062,22 +1790,6 @@ public interface GedbmPackage extends EPackage {
 		EClass FOREIGN_KEY = eINSTANCE.getForeignKey();
 
 		/**
-		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FOREIGN_KEY__CODE = eINSTANCE.getForeignKey_Code();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FOREIGN_KEY__NAME = eINSTANCE.getForeignKey_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Refers To</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2102,6 +1814,14 @@ public interface GedbmPackage extends EPackage {
 		EReference FOREIGN_KEY__REFERENCES = eINSTANCE.getForeignKey_References();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FOREIGN_KEY__NAME = eINSTANCE.getForeignKey_Name();
+
+		/**
 		 * The meta object literal for the '{@link gedbm.impl.CheckImpl <em>Check</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2110,14 +1830,6 @@ public interface GedbmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CHECK = eINSTANCE.getCheck();
-
-		/**
-		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CHECK__CODE = eINSTANCE.getCheck_Code();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2146,14 +1858,6 @@ public interface GedbmPackage extends EPackage {
 		EClass DEFAULT_VALUE = eINSTANCE.getDefaultValue();
 
 		/**
-		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DEFAULT_VALUE__CODE = eINSTANCE.getDefaultValue_Code();
-
-		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2170,6 +1874,26 @@ public interface GedbmPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum TYPE = eINSTANCE.getType();
+
+		/**
+		 * The meta object literal for the '{@link gedbm.EntityType <em>Entity Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see gedbm.EntityType
+		 * @see gedbm.impl.GedbmPackageImpl#getEntityType()
+		 * @generated
+		 */
+		EEnum ENTITY_TYPE = eINSTANCE.getEntityType();
+
+		/**
+		 * The meta object literal for the '{@link gedbm.RelationshipType <em>Relationship Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see gedbm.RelationshipType
+		 * @see gedbm.impl.GedbmPackageImpl#getRelationshipType()
+		 * @generated
+		 */
+		EEnum RELATIONSHIP_TYPE = eINSTANCE.getRelationshipType();
 
 	}
 

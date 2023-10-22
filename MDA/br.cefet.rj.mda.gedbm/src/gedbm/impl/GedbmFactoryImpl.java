@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.impl;
 
@@ -32,7 +28,7 @@ public class GedbmFactoryImpl extends EFactoryImpl implements GedbmFactory {
 	 */
 	public static GedbmFactory init() {
 		try {
-			GedbmFactory theGedbmFactory = (GedbmFactory)EPackage.Registry.INSTANCE.getEFactory("http://br.cefet.rj.mda.gedbm"); 
+			GedbmFactory theGedbmFactory = (GedbmFactory)EPackage.Registry.INSTANCE.getEFactory(GedbmPackage.eNS_URI);
 			if (theGedbmFactory != null) {
 				return theGedbmFactory;
 			}
@@ -61,9 +57,7 @@ public class GedbmFactoryImpl extends EFactoryImpl implements GedbmFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case GedbmPackage.MODEL: return createModel();
 			case GedbmPackage.DATA_BASE: return createDataBase();
-			case GedbmPackage.COMPONENTS: return createComponents();
 			case GedbmPackage.ENTITY: return createEntity();
 			case GedbmPackage.RELATIONSHIP: return createRelationship();
 			case GedbmPackage.CARDINALITY: return createCardinality();
@@ -90,6 +84,10 @@ public class GedbmFactoryImpl extends EFactoryImpl implements GedbmFactory {
 		switch (eDataType.getClassifierID()) {
 			case GedbmPackage.TYPE:
 				return createTypeFromString(eDataType, initialValue);
+			case GedbmPackage.ENTITY_TYPE:
+				return createEntityTypeFromString(eDataType, initialValue);
+			case GedbmPackage.RELATIONSHIP_TYPE:
+				return createRelationshipTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -105,6 +103,10 @@ public class GedbmFactoryImpl extends EFactoryImpl implements GedbmFactory {
 		switch (eDataType.getClassifierID()) {
 			case GedbmPackage.TYPE:
 				return convertTypeToString(eDataType, instanceValue);
+			case GedbmPackage.ENTITY_TYPE:
+				return convertEntityTypeToString(eDataType, instanceValue);
+			case GedbmPackage.RELATIONSHIP_TYPE:
+				return convertRelationshipTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -115,29 +117,9 @@ public class GedbmFactoryImpl extends EFactoryImpl implements GedbmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Model createModel() {
-		ModelImpl model = new ModelImpl();
-		return model;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public DataBase createDataBase() {
 		DataBaseImpl dataBase = new DataBaseImpl();
 		return dataBase;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Components createComponents() {
-		ComponentsImpl components = new ComponentsImpl();
-		return components;
 	}
 
 	/**
@@ -267,6 +249,46 @@ public class GedbmFactoryImpl extends EFactoryImpl implements GedbmFactory {
 	 * @generated
 	 */
 	public String convertTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityType createEntityTypeFromString(EDataType eDataType, String initialValue) {
+		EntityType result = EntityType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEntityTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RelationshipType createRelationshipTypeFromString(EDataType eDataType, String initialValue) {
+		RelationshipType result = RelationshipType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRelationshipTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

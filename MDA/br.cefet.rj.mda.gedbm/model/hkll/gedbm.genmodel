@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/br.cefet.rj.mda.gedbm/src" modelPluginID="br.cefet.rj.mda.gedbm"
+    modelName="Gedbm" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>gedbm.ecore</foreignModel>
+  <genPackages prefix="Gedbm" disposableProviderFactory="true" ecorePackage="gedbm.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gedbm.ecore#//Type">
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/int"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/double"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/varchar"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/date"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/time"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/timeStamp"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/interval"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/LOB"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/CLOB"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/BLOB"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/array"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/BigInt"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/MultiSet"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/XML"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/characterVarying"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/varchar2"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/charVarying"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/decimal"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/bit"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/bitVarying"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/numeric"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/smallInt"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/real"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/doublePrecision"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/character"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/float"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/Geometry"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/Point"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/LineString"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/Polygon"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/GeometryCollection"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/MultiPoint"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/MultiLineString"/>
+      <genEnumLiterals ecoreEnumLiteral="gedbm.ecore#//Type/MultiPolygon"/>
+    </genEnums>
+    <genClasses ecoreClass="gedbm.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//Model/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gedbm.ecore#//Model/isFormedOf"/>
+    </genClasses>
+    <genClasses ecoreClass="gedbm.ecore#//DataBase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//DataBase/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gedbm.ecore#//DataBase/isComposed"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gedbm.ecore#//DataBase/hasInteraction"/>
+    </genClasses>
+    <genClasses ecoreClass="gedbm.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//Entity/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gedbm.ecore#//Entity/isComposed"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gedbm.ecore#//Entity/subgroupOf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gedbm.ecore#//Entity/hasForeignKey"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gedbm.ecore#//Entity/hasPrimaryKey"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gedbm.ecore#//Entity/hasCheck"/>
+    </genClasses>
+    <genClasses ecoreClass="gedbm.ecore#//Relationship">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//Relationship/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gedbm.ecore#//Relationship/related"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gedbm.ecore#//Relationship/isConstraint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gedbm.ecore#//Relationship/isMapping"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gedbm.ecore#//Relationship/wouldHasPrimary"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gedbm.ecore#//Relationship/wouldHasForeign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//Relationship/isAssociative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//Relationship/entity_relation_name"/>
+    </genClasses>
+    <genClasses ecoreClass="gedbm.ecore#//Cardinality">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//Cardinality/limit"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gedbm.ecore#//Cardinality/referent"/>
+    </genClasses>
+    <genClasses ecoreClass="gedbm.ecore#//Field">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//Field/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//Field/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gedbm.ecore#//Field/hasForeignKey"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gedbm.ecore#//Field/hasTextLimit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gedbm.ecore#//Field/hasNumericLimit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gedbm.ecore#//Field/hasIntegrity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gedbm.ecore#//Field/hasDefaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="gedbm.ecore#//Integrity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//Integrity/not_null"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//Integrity/unique"/>
+    </genClasses>
+    <genClasses ecoreClass="gedbm.ecore#//NumericLimit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//NumericLimit/limit_value"/>
+    </genClasses>
+    <genClasses ecoreClass="gedbm.ecore#//TextLimit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//TextLimit/size"/>
+    </genClasses>
+    <genClasses ecoreClass="gedbm.ecore#//PrimaryKey">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//PrimaryKey/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gedbm.ecore#//PrimaryKey/isPrimary"/>
+    </genClasses>
+    <genClasses ecoreClass="gedbm.ecore#//ForeignKey">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//ForeignKey/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gedbm.ecore#//ForeignKey/refersTo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gedbm.ecore#//ForeignKey/isForeign"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gedbm.ecore#//ForeignKey/References"/>
+    </genClasses>
+    <genClasses ecoreClass="gedbm.ecore#//Check">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//Check/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//Check/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="gedbm.ecore#//DefaultValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gedbm.ecore#//DefaultValue/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

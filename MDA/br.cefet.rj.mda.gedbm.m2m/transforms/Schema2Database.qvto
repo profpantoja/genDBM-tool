@@ -1,0 +1,15 @@
+import Conventional2Entity;
+import BaseRelationship2Relationship;
+	
+	
+modeltype gedbm uses gedbm('http://br.cefet.rj.mda.gedbm');
+modeltype omtg uses omtg('http://www.ifc-camboriu.edu.br/~frozza/omtg');
+
+transformation Schema2Database( in omtgModel : omtg, out gedbm : gedbm );
+
+mapping omtg::Schema :: Schema2Database() : gedbm::DataBase {
+init { log("Tranforming omtg to gedbm.");}
+	result.isComposed += self._class[omtg::Conventional].map Conventional2Entity()->asOrderedSet();
+	result.hasInteraction += self.relationship->map BaseRelationship2Relationship( result.isComposed )->asOrderedSet();
+	end { log("Tranformations Finished.");}
+}

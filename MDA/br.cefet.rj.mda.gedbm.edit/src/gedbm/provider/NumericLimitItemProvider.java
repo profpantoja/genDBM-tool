@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.provider;
 
@@ -64,32 +60,9 @@ public class NumericLimitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCodePropertyDescriptor(object);
 			addLimit_valuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Code feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCodePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_NumericLimit_code_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NumericLimit_code_feature", "_UI_NumericLimit_type"),
-				 GedbmPackage.Literals.NUMERIC_LIMIT__CODE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -134,7 +107,7 @@ public class NumericLimitItemProvider
 	@Override
 	public String getText(Object object) {
 		NumericLimit numericLimit = (NumericLimit)object;
-		return getString("_UI_NumericLimit_type") + " " + numericLimit.getCode();
+		return getString("_UI_NumericLimit_type") + " " + numericLimit.getLimit_value();
 	}
 
 	/**
@@ -149,7 +122,6 @@ public class NumericLimitItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(NumericLimit.class)) {
-			case GedbmPackage.NUMERIC_LIMIT__CODE:
 			case GedbmPackage.NUMERIC_LIMIT__LIMIT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

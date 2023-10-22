@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gedbm="http://br.cefet.rj.mda.gedbm" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_8Wl3MMsGEeOJtLuNZLCE0A" type="Gedbm" name="OMTG_teste.gedbm_diagram" measurementUnit="Pixel">
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_8Wl3McsGEeOJtLuNZLCE0A"/>
+  <element xmi:type="gedbm:DataBase" href="OMTG_teste.gedbm#/"/>
+</notation:Diagram>

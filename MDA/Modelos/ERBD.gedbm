@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gedbm:DataBase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gedbm="http://br.cefet.rj.mda.gedbm" name="ERBD">
+  <isComposed name="Cliente">
+    <isComposed name="nome" type="varchar"/>
+    <isComposed name="numero"/>
+    <isComposed name="sobrenome" type="varchar"/>
+    <isComposed name="endereco" type="varchar"/>
+    <isComposed name="telefone" type="varchar"/>
+    <hasPrimaryKey name="PK_Cliente" isPrimary="//@isComposed.1/@isComposed.0"/>
+  </isComposed>
+  <isComposed name="Fita">
+    <isComposed name="numero"/>
+    <isComposed name="rolo" type="varchar"/>
+    <isComposed name="id_Cliente" hasForeignKey="//@isComposed.1/@hasForeignKey.0"/>
+    <isComposed name="id_Filme" hasForeignKey="//@isComposed.1/@hasForeignKey.1"/>
+    <hasForeignKey refersTo="//@isComposed.0/@hasPrimaryKey.0" isForeign="//@isComposed.1/@isComposed.2" References="//@isComposed.0" name="FK_id_cliente"/>
+    <hasForeignKey refersTo="//@isComposed.2/@hasPrimaryKey.0" isForeign="//@isComposed.1/@isComposed.3" References="//@isComposed.2" name="FK_id_filme"/>
+    <hasPrimaryKey name="PK_Fita" isPrimary="//@isComposed.0/@isComposed.1"/>
+  </isComposed>
+  <isComposed name="Filme">
+    <isComposed name="titulo" type="varchar"/>
+    <isComposed name="id"/>
+    <isComposed name="id_categoria" hasForeignKey="//@isComposed.2/@hasForeignKey.0"/>
+    <hasForeignKey refersTo="//@isComposed.3/@hasPrimaryKey.0" isForeign="//@isComposed.2/@isComposed.2" References="//@isComposed.3" name="FK_id_categoria"/>
+    <hasPrimaryKey name="PK_Filme" isPrimary="//@isComposed.2/@isComposed.1"/>
+  </isComposed>
+  <isComposed name="Categoria">
+    <isComposed name="nome" type="varchar"/>
+    <isComposed name="codigo"/>
+    <hasPrimaryKey name="PK_Categoria" isPrimary="//@isComposed.3/@isComposed.1"/>
+  </isComposed>
+  <isComposed name="Ator">
+    <isComposed name="nome_popular" type="varchar"/>
+    <isComposed name="nome_artistico" type="varchar"/>
+    <isComposed name="data_de_nascimento" type="date"/>
+    <isComposed name="codigo"/>
+    <hasPrimaryKey name="PK_Ator" isPrimary="//@isComposed.4/@isComposed.3"/>
+  </isComposed>
+  <hasInteraction name="Emp" related="//@isComposed.0 //@isComposed.1">
+    <isConstraint limit="1" referent="//@isComposed.0"/>
+    <isConstraint limit="n" referent="//@isComposed.1"/>
+  </hasInteraction>
+  <hasInteraction name="Contem" related="//@isComposed.1 //@isComposed.2">
+    <isConstraint limit="n" referent="//@isComposed.1"/>
+    <isConstraint limit="1" referent="//@isComposed.2"/>
+  </hasInteraction>
+  <hasInteraction name="Pertence" related="//@isComposed.2 //@isComposed.3">
+    <isConstraint limit="n" referent="//@isComposed.2"/>
+    <isConstraint limit="1" referent="//@isComposed.3"/>
+  </hasInteraction>
+  <hasInteraction name="Estrela" isAssociative="true" entity_relation_name="Filme_Ator" related="//@isComposed.2 //@isComposed.4">
+    <isConstraint limit="n" referent="//@isComposed.2"/>
+    <isConstraint limit="n" referent="//@isComposed.4"/>
+    <isMapping name="cod"/>
+    <wouldHasPrimary name="PK_Filme_Ator" isPrimary="//@hasInteraction.3/@isMapping.0"/>
+    <wouldHasForeign refersTo="//@isComposed.4/@hasPrimaryKey.0" References="//@isComposed.4" name="FK_Filme_Ator"/>
+    <wouldHasForeign refersTo="//@isComposed.2/@hasPrimaryKey.0" References="//@isComposed.2" name="FK_Filme_Ator"/>
+  </hasInteraction>
+</gedbm:DataBase>

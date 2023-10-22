@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.provider;
 
@@ -64,33 +60,10 @@ public class CardinalityItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCodePropertyDescriptor(object);
 			addLimitPropertyDescriptor(object);
 			addReferentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Code feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCodePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Cardinality_code_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Cardinality_code_feature", "_UI_Cardinality_type"),
-				 GedbmPackage.Literals.CARDINALITY__CODE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -156,8 +129,10 @@ public class CardinalityItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Cardinality cardinality = (Cardinality)object;
-		return getString("_UI_Cardinality_type") + " " + cardinality.getCode();
+		String label = ((Cardinality)object).getLimit();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Cardinality_type") :
+			getString("_UI_Cardinality_type") + " " + label;
 	}
 
 	/**
@@ -172,7 +147,6 @@ public class CardinalityItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Cardinality.class)) {
-			case GedbmPackage.CARDINALITY__CODE:
 			case GedbmPackage.CARDINALITY__LIMIT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

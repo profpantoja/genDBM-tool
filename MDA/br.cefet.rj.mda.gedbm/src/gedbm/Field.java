@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm;
 
@@ -18,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link gedbm.Field#getCode <em>Code</em>}</li>
  *   <li>{@link gedbm.Field#getName <em>Name</em>}</li>
  *   <li>{@link gedbm.Field#getType <em>Type</em>}</li>
  *   <li>{@link gedbm.Field#getHasForeignKey <em>Has Foreign Key</em>}</li>
@@ -34,32 +29,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Field extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Code</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Code</em>' attribute.
-	 * @see #setCode(int)
-	 * @see gedbm.GedbmPackage#getField_Code()
-	 * @model
-	 * @generated
-	 */
-	int getCode();
-
-	/**
-	 * Sets the value of the '{@link gedbm.Field#getCode <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Code</em>' attribute.
-	 * @see #getCode()
-	 * @generated
-	 */
-	void setCode(int value);
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

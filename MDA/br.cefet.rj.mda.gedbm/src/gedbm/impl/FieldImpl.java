@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.impl;
 
@@ -26,7 +22,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
@@ -37,7 +33,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link gedbm.impl.FieldImpl#getCode <em>Code</em>}</li>
  *   <li>{@link gedbm.impl.FieldImpl#getName <em>Name</em>}</li>
  *   <li>{@link gedbm.impl.FieldImpl#getType <em>Type</em>}</li>
  *   <li>{@link gedbm.impl.FieldImpl#getHasForeignKey <em>Has Foreign Key</em>}</li>
@@ -50,27 +45,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class FieldImpl extends EObjectImpl implements Field {
-	/**
-	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int CODE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected int code = CODE_EDEFAULT;
-
+public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -178,27 +153,6 @@ public class FieldImpl extends EObjectImpl implements Field {
 	@Override
 	protected EClass eStaticClass() {
 		return GedbmPackage.Literals.FIELD;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getCode() {
-		return code;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCode(int newCode) {
-		int oldCode = code;
-		code = newCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GedbmPackage.FIELD__CODE, oldCode, code));
 	}
 
 	/**
@@ -455,8 +409,6 @@ public class FieldImpl extends EObjectImpl implements Field {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GedbmPackage.FIELD__CODE:
-				return getCode();
 			case GedbmPackage.FIELD__NAME:
 				return getName();
 			case GedbmPackage.FIELD__TYPE:
@@ -484,9 +436,6 @@ public class FieldImpl extends EObjectImpl implements Field {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GedbmPackage.FIELD__CODE:
-				setCode((Integer)newValue);
-				return;
 			case GedbmPackage.FIELD__NAME:
 				setName((String)newValue);
 				return;
@@ -521,9 +470,6 @@ public class FieldImpl extends EObjectImpl implements Field {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GedbmPackage.FIELD__CODE:
-				setCode(CODE_EDEFAULT);
-				return;
 			case GedbmPackage.FIELD__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -557,8 +503,6 @@ public class FieldImpl extends EObjectImpl implements Field {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GedbmPackage.FIELD__CODE:
-				return code != CODE_EDEFAULT;
 			case GedbmPackage.FIELD__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case GedbmPackage.FIELD__TYPE:
@@ -587,9 +531,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (code: ");
-		result.append(code);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
 		result.append(", type: ");
 		result.append(type);

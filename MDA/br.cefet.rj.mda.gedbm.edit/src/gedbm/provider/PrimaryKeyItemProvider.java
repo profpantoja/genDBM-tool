@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.provider;
 
@@ -64,33 +60,10 @@ public class PrimaryKeyItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCodePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addIsPrimaryPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Code feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCodePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PrimaryKey_code_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PrimaryKey_code_feature", "_UI_PrimaryKey_type"),
-				 GedbmPackage.Literals.PRIMARY_KEY__CODE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -174,7 +147,6 @@ public class PrimaryKeyItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PrimaryKey.class)) {
-			case GedbmPackage.PRIMARY_KEY__CODE:
 			case GedbmPackage.PRIMARY_KEY__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

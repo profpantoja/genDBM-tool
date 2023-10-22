@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.provider;
 
@@ -106,7 +102,6 @@ public class DataBaseItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(GedbmPackage.Literals.DATA_BASE__HAS);
 			childrenFeatures.add(GedbmPackage.Literals.DATA_BASE__IS_COMPOSED);
 			childrenFeatures.add(GedbmPackage.Literals.DATA_BASE__HAS_INTERACTION);
 		}
@@ -166,7 +161,6 @@ public class DataBaseItemProvider
 			case GedbmPackage.DATA_BASE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case GedbmPackage.DATA_BASE__HAS:
 			case GedbmPackage.DATA_BASE__IS_COMPOSED:
 			case GedbmPackage.DATA_BASE__HAS_INTERACTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -185,11 +179,6 @@ public class DataBaseItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GedbmPackage.Literals.DATA_BASE__HAS,
-				 GedbmFactory.eINSTANCE.createComponents()));
 
 		newChildDescriptors.add
 			(createChildParameter

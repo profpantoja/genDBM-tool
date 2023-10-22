@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="omtg" nsURI="http://www.ifc-camboriu.edu.br/~frozza/omtg" nsPrefix="omtg">
+  <eClassifiers xsi:type="ecore:EClass" name="Schema">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" upperBound="-1"
+        eType="#//element" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invokeClass" upperBound="-1"
+        eType="#//Conventional" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationship" upperBound="-1"
+        eType="#//baseRelationship" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="element" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Conventional" eSuperTypes="#//element #//attributeSupport">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="method" upperBound="-1"
+        eType="#//Method" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//generalDataTypes"
+        defaultValueLiteral="VARCHAR"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//visibilityTypes"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isIdentificable" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Method">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" lowerBound="1"
+        eType="#//visibilityTypes" defaultValueLiteral="public"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="return" eType="#//generalDataTypes"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attibutes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="generalDataTypes">
+    <eLiterals name="BIGINT"/>
+    <eLiterals name="INTEGER" value="1"/>
+    <eLiterals name="SMALLINT" value="2"/>
+    <eLiterals name="INTERVAL" value="3"/>
+    <eLiterals name="DOUBLE" value="4"/>
+    <eLiterals name="BIT" value="5"/>
+    <eLiterals name="BOOLEAN" value="6"/>
+    <eLiterals name="CHAR" value="7"/>
+    <eLiterals name="VARCHAR" value="8"/>
+    <eLiterals name="DATE" value="9"/>
+    <eLiterals name="TIMESTAMP" value="10"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="geoField" abstract="true" eSuperTypes="#//Conventional"/>
+  <eClassifiers xsi:type="ecore:EClass" name="geoObject" abstract="true" eSuperTypes="#//Conventional"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkClass" eSuperTypes="#//geoField"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sampling" eSuperTypes="#//geoField"/>
+  <eClassifiers xsi:type="ecore:EClass" name="geoObjectWithGeometry" abstract="true"
+      eSuperTypes="#//geoObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AdjacentPolygons" eSuperTypes="#//geoField"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Tesselation" eSuperTypes="#//geoField"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Isoline" eSuperTypes="#//geoField"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Polygon" eSuperTypes="#//geoObjectWithGeometry"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Point" eSuperTypes="#//geoObjectWithGeometry"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Line" eSuperTypes="#//geoObjectWithGeometry"/>
+  <eClassifiers xsi:type="ecore:EClass" name="geoObjectWithGeometryAndTopology" abstract="true"
+      eSuperTypes="#//geoObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="#//geoObjectWithGeometryAndTopology"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnidirectionalLine" eSuperTypes="#//geoObjectWithGeometryAndTopology"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BidirectionalLine" eSuperTypes="#//geoObjectWithGeometryAndTopology"/>
+  <eClassifiers xsi:type="ecore:EClass" name="baseRelationship" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//element"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//element"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" lowerBound="1"
+        eType="#//Cardinality"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="association" abstract="true" eSuperTypes="#//baseRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="attributeSupport" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
+        eType="#//Attribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Cardinality">
+    <eLiterals name="ZeroOrMore"/>
+    <eLiterals name="OneOrMore" value="1"/>
+    <eLiterals name="ExactlyOne" value="2"/>
+    <eLiterals name="ZeroOrOne" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="generalization" abstract="true" eSuperTypes="#//baseRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Agregation" eSuperTypes="#//baseRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SpatialAgregation" eSuperTypes="#//baseRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="cartographicGeneralization" abstract="true"
+      eSuperTypes="#//baseRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Simple" eSuperTypes="#//association"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Spatial" eSuperTypes="#//association"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkAssociation" eSuperTypes="#//association"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DisjointPartial" eSuperTypes="#//generalization"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DisjointTotal" eSuperTypes="#//generalization"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OverlappingPartial" eSuperTypes="#//generalization"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OverlappingTotal" eSuperTypes="#//generalization"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Shape" eSuperTypes="#//cartographicGeneralization"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Scale" eSuperTypes="#//cartographicGeneralization"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="visibilityTypes">
+    <eLiterals name="public" literal="public"/>
+    <eLiterals name="protected" value="1"/>
+    <eLiterals name="private" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

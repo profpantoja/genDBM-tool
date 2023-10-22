@@ -1,0 +1,40 @@
+import Attribute2Field;
+
+modeltype gedbm uses gedbm('http://br.cefet.rj.mda.gedbm');
+modeltype omtg uses omtg('http://www.ifc-camboriu.edu.br/~frozza/omtg');
+
+transformation Conventional2Entity(in omtgModel : omtg, out gedbm : gedbm );
+
+mapping omtg::Conventional :: Conventional2Entity() : gedbm::Entity {
+init { log("Tranforming Conventional to Entity.");}
+	result.name := self.name; 
+	
+	switch {
+		case ( self[omtg::NetworkClass]->size() > 0 ) result.type := gedbm::EntityType::NetworkClass;
+		case ( self[omtg::AdjacentPolygons]->size() > 0 ) result.type := gedbm::EntityType::AdjacentPolygons;
+		case ( self[omtg::Tesselation]->size() > 0 ) result.type := gedbm::EntityType::Tesselation;
+		case ( self[omtg::Sampling]->size() > 0 ) result.type := gedbm::EntityType::Sampling;
+		case ( self[omtg::Isoline]->size() > 0 ) result.type := gedbm::EntityType::Isoline;
+		case ( self[omtg::Polygon]->size() > 0 ) result.type :=gedbm::EntityType::Polygon;
+		case ( self[omtg::Point]->size() > 0 ) result.type := gedbm::EntityType::Point;
+		case ( self[omtg::Line]->size() > 0 ) result.type := gedbm::EntityType::Line;
+		case ( self[omtg::Node]->size() > 0 ) result.type := gedbm::EntityType::Node;
+		case ( self[omtg::UnidirectionalLine]->size() > 0 ) result.type := gedbm::EntityType::UnidirectionalLine;
+		case ( self[omtg::BidirectionalLine]->size() > 0 ) result.type := gedbm::EntityType::BidirectionalLine;
+		else result.type := gedbm::EntityType::Conventional;
+	};
+	
+	
+	result.isComposed += self.attribute->map Attribute2Field()->asOrderedSet();
+	var fieldPrimeryKey := object gedbm::Field{
+		name := "id_".concat(self.name);
+		type := gedbm::Type::int;
+	};
+	result.isComposed += fieldPrimeryKey;
+	result.hasPrimaryKey += object gedbm::PrimaryKey{
+		name := "PK_".concat(self.name);
+		isPrimary := fieldPrimeryKey; 
+		
+	};
+	end { log("Conventional2Entity Finished.");}
+}

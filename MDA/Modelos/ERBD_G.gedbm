@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gedbm:DataBase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gedbm="http://br.cefet.rj.mda.gedbm" name="ERBD_G">
+  <isComposed name="Logradouro">
+    <isComposed name="Codigo" type="varchar"/>
+    <isComposed name="id_Logradouro"/>
+    <hasPrimaryKey name="PK_Logradouro" isPrimary="//@isComposed.0/@isComposed.1"/>
+  </isComposed>
+  <isComposed name="SegmentoDeLogradouro" type="BidirectionalLine">
+    <isComposed name="id_SegmentoDeLogradouro"/>
+    <isComposed name="id_Logradouro" hasForeignKey="//@isComposed.1/@hasForeignKey.0"/>
+    <hasForeignKey refersTo="//@isComposed.0/@hasPrimaryKey.0" isForeign="//@isComposed.1/@isComposed.1" References="//@isComposed.0" name="FK_SegmentoDeLogradouro"/>
+    <hasPrimaryKey name="PK_SegmentoDeLogradouro" isPrimary="//@isComposed.1/@isComposed.0"/>
+  </isComposed>
+  <isComposed name="Endereco" type="AdjacentPolygons">
+    <isComposed name="id_Endereco"/>
+    <isComposed name="id_Logradouro" hasForeignKey="//@isComposed.2/@hasForeignKey.0"/>
+    <hasForeignKey refersTo="//@isComposed.0/@hasPrimaryKey.0" isForeign="//@isComposed.2/@isComposed.1" References="//@isComposed.0" name="FK_Endereco"/>
+    <hasPrimaryKey name="PK_Endereco" isPrimary="//@isComposed.2/@isComposed.0"/>
+  </isComposed>
+  <isComposed name="Lote" type="Node">
+    <isComposed name="id_Lote"/>
+    <hasPrimaryKey name="PK_Lote" isPrimary="//@isComposed.3/@isComposed.0"/>
+  </isComposed>
+  <hasInteraction name="Inclui">
+    <isConstraint limit="0" referent="//@isComposed.0"/>
+    <isConstraint limit="n" referent="//@isComposed.2"/>
+  </hasInteraction>
+  <hasInteraction name="Em frente a" type="Spatial">
+    <isConstraint limit="0" referent="//@isComposed.1"/>
+    <isConstraint limit="n" referent="//@isComposed.3"/>
+  </hasInteraction>
+  <hasInteraction name="" type="Agregation">
+    <isConstraint limit="0" referent="//@isComposed.0"/>
+    <isConstraint limit="n" referent="//@isComposed.1"/>
+  </hasInteraction>
+</gedbm:DataBase>

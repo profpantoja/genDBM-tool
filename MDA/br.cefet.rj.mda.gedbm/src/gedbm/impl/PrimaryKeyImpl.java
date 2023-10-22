@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.impl;
 
@@ -19,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
@@ -30,7 +26,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link gedbm.impl.PrimaryKeyImpl#getCode <em>Code</em>}</li>
  *   <li>{@link gedbm.impl.PrimaryKeyImpl#getName <em>Name</em>}</li>
  *   <li>{@link gedbm.impl.PrimaryKeyImpl#getIsPrimary <em>Is Primary</em>}</li>
  * </ul>
@@ -38,27 +33,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class PrimaryKeyImpl extends EObjectImpl implements PrimaryKey {
-	/**
-	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int CODE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected int code = CODE_EDEFAULT;
-
+public class PrimaryKeyImpl extends MinimalEObjectImpl.Container implements PrimaryKey {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -113,27 +88,6 @@ public class PrimaryKeyImpl extends EObjectImpl implements PrimaryKey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getCode() {
-		return code;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCode(int newCode) {
-		int oldCode = code;
-		code = newCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GedbmPackage.PRIMARY_KEY__CODE, oldCode, code));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getName() {
 		return name;
 	}
@@ -170,8 +124,6 @@ public class PrimaryKeyImpl extends EObjectImpl implements PrimaryKey {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GedbmPackage.PRIMARY_KEY__CODE:
-				return getCode();
 			case GedbmPackage.PRIMARY_KEY__NAME:
 				return getName();
 			case GedbmPackage.PRIMARY_KEY__IS_PRIMARY:
@@ -189,9 +141,6 @@ public class PrimaryKeyImpl extends EObjectImpl implements PrimaryKey {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GedbmPackage.PRIMARY_KEY__CODE:
-				setCode((Integer)newValue);
-				return;
 			case GedbmPackage.PRIMARY_KEY__NAME:
 				setName((String)newValue);
 				return;
@@ -211,9 +160,6 @@ public class PrimaryKeyImpl extends EObjectImpl implements PrimaryKey {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GedbmPackage.PRIMARY_KEY__CODE:
-				setCode(CODE_EDEFAULT);
-				return;
 			case GedbmPackage.PRIMARY_KEY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -232,8 +178,6 @@ public class PrimaryKeyImpl extends EObjectImpl implements PrimaryKey {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GedbmPackage.PRIMARY_KEY__CODE:
-				return code != CODE_EDEFAULT;
 			case GedbmPackage.PRIMARY_KEY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case GedbmPackage.PRIMARY_KEY__IS_PRIMARY:
@@ -252,9 +196,7 @@ public class PrimaryKeyImpl extends EObjectImpl implements PrimaryKey {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (code: ");
-		result.append(code);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
 		result.append(')');
 		return result.toString();

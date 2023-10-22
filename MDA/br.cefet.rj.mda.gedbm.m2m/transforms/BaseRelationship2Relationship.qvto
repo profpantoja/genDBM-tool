@@ -1,0 +1,243 @@
+import Conventional2Entity;
+import Attribute2Field;
+
+modeltype gedbm uses gedbm('http://br.cefet.rj.mda.gedbm');
+modeltype omtg uses omtg('http://www.ifc-camboriu.edu.br/~frozza/omtg');
+
+transformation BaseRelationship2Relationship( in omtgModel : omtg, out gedbmModel : gedbm );
+
+mapping omtg::baseRelationship :: BaseRelationship2Relationship( entities : OrderedSet( gedbm::Entity ) ) : gedbm::Relationship {
+init { log("Tranforming BaseRelationship to Relationship.");}
+	result.name := self.name;
+	
+	var sourceEntity : gedbm::Entity := self.returnSourceEntity( entities );
+	var targetEntity : gedbm::Entity := self.returnTargetEntity( entities );
+	
+	result.isConstraint += object gedbm::Cardinality{
+		limit := "0";
+		referent :=  sourceEntity;
+	};
+	
+	result.isConstraint += object gedbm::Cardinality{
+		limit := "n";
+		referent :=  targetEntity;
+	};
+	
+	if(self[omtg::Spatial]->size() > 0) then {
+		result.type := gedbm::RelationshipType::Spatial;
+	} else {
+		if(self[omtg::Agregation]->size() > 0) then {
+		
+			result.type := gedbm::RelationshipType::Agregation;
+			
+			var fieldFK : Field = object gedbm::Field{
+				name := 'id_'.concat( sourceEntity.name );
+				type := gedbm::Type::int;
+			};
+			var foreignKey : ForeignKey = object gedbm::ForeignKey{
+				refersTo := sourceEntity.hasPrimaryKey->at(1);
+				name := 'FK_'.concat( targetEntity.name );
+				References := sourceEntity;
+				isForeign := fieldFK;
+			};
+											
+			fieldFK.hasForeignKey += foreignKey;
+											
+			targetEntity.isComposed += fieldFK;
+			targetEntity.hasForeignKey += foreignKey;
+													
+		} else {
+			if(self[omtg::SpatialAgregation]->size() > 0) then {
+				result.type := gedbm::RelationshipType::SpatialAgregation;
+			} else {
+				if(self[omtg::NetworkAssociation]->size() > 0) then {
+					result.type := gedbm::RelationshipType::NetworkAssociation;
+				} else {
+					if(self[omtg::DisjointPartial]->size() > 0) then {
+					
+						result.type := gedbm::RelationshipType::DisjointPartial;
+											
+						var fieldFK : Field = object gedbm::Field{
+							name := 'id_'.concat( sourceEntity.name );
+							type := gedbm::Type::int;
+						};
+						var foreignKey : ForeignKey = object gedbm::ForeignKey{
+							refersTo := sourceEntity.hasPrimaryKey->at(1);
+							name := 'FK_'.concat( targetEntity.name );
+							References := sourceEntity;
+							isForeign := fieldFK;
+						};
+											
+						fieldFK.hasForeignKey += foreignKey;
+											
+						targetEntity.isComposed += fieldFK;
+						targetEntity.hasForeignKey += foreignKey;		
+					
+					} else {
+						if(self[omtg::DisjointTotal]->size() > 0) then {
+						
+							result.type := gedbm::RelationshipType::DisjointTotal;
+							
+							var fieldFK : Field = object gedbm::Field{
+								name := 'id_'.concat( sourceEntity.name );
+								type := gedbm::Type::int;
+							};
+							var foreignKey : ForeignKey = object gedbm::ForeignKey{
+								refersTo := sourceEntity.hasPrimaryKey->at(1);
+								name := 'FK_'.concat( targetEntity.name );
+								References := sourceEntity;
+								isForeign := fieldFK;
+							};
+											
+							fieldFK.hasForeignKey += foreignKey;
+											
+							targetEntity.isComposed += fieldFK;
+							targetEntity.hasForeignKey += foreignKey;
+											
+						} else {
+							if(self[omtg::OverlappingPartial]->size() > 0) then {
+							
+								result.type := gedbm::RelationshipType::OverlappingPartial;
+								
+								var fieldFK : Field = object gedbm::Field{
+									name := 'id_'.concat( sourceEntity.name );
+									type := gedbm::Type::int;
+								};
+								var foreignKey : ForeignKey = object gedbm::ForeignKey{
+									refersTo := sourceEntity.hasPrimaryKey->at(1);
+									name := 'FK_'.concat( targetEntity.name );
+									References := sourceEntity;
+									isForeign := fieldFK;
+								};
+										
+								fieldFK.hasForeignKey += foreignKey;
+									
+								targetEntity.isComposed += fieldFK;
+								targetEntity.hasForeignKey += foreignKey;
+					
+							} else {
+								if(self[omtg::OverlappingTotal]->size() > 0) then {
+								
+									result.type := gedbm::RelationshipType::OverlappingTotal;
+									
+									var fieldFK : Field = object gedbm::Field{
+										name := 'id_'.concat( sourceEntity.name );
+										type := gedbm::Type::int;
+									};
+									var foreignKey : ForeignKey = object gedbm::ForeignKey{
+										refersTo := sourceEntity.hasPrimaryKey->at(1);
+										name := 'FK_'.concat( targetEntity.name );
+										References := sourceEntity;
+										isForeign := fieldFK;
+									};
+									
+									fieldFK.hasForeignKey += foreignKey;
+									
+									targetEntity.isComposed += fieldFK;
+									targetEntity.hasForeignKey += foreignKey;		
+					
+								} else {
+									if(self[omtg::Shape]->size() > 0) then {
+									
+										result.type := gedbm::RelationshipType::Shape;
+										
+									} else {
+										if(self[omtg::Scale]->size() > 0) then {
+										
+											result.type := gedbm::RelationshipType::Scale;
+											
+										} else {
+										
+											result.type := gedbm::RelationshipType::Simple;
+											
+											var fieldFK : Field = object gedbm::Field{
+												name := 'id_'.concat( sourceEntity.name );
+												type := gedbm::Type::int;
+											};
+											var foreignKey : ForeignKey = object gedbm::ForeignKey{
+												refersTo := sourceEntity.hasPrimaryKey->at(1);
+												name := 'FK_'.concat( targetEntity.name );
+												References := sourceEntity;
+												isForeign := fieldFK;
+											};
+											
+											fieldFK.hasForeignKey += foreignKey;
+											
+											targetEntity.isComposed += fieldFK;
+											targetEntity.hasForeignKey += foreignKey;
+											
+										} endif;
+									} endif;
+								} endif;
+							} endif;
+						} endif;
+					} endif;
+				} endif;
+			} endif;
+		} endif;
+	} endif;
+		
+	end { log("BaseRelationship2Relationship Finished.");}
+}
+
+query omtg::baseRelationship::returnSourceEntity( entities : OrderedSet( gedbm::Entity ) ) : gedbm::Entity {
+	var index : Integer := 1;
+	while( index <= entities->size() ){
+		if( entities->at( index ).name = self.source.name ) then{
+			return entities->at( index );
+		}endif;
+		index := index + 1;
+	};
+	return null;
+}
+
+query omtg::baseRelationship::returnTargetEntity( entities : OrderedSet( gedbm::Entity ) ) : gedbm::Entity {
+	var index : Integer := 1;
+	while( index <= entities->size() ){
+		if( entities->at( index ).name = self.target.name ) then{
+			return entities->at( index );
+		}endif;
+		index := index + 1;
+	};
+	return null;
+}
+
+
+
+//	result.isConstraint += object gedbm::Cardinality{
+//		limit := "0";
+//		referent := object gedbm::Entity{
+//			
+//			name := self.source.name;
+//			isComposed += self.source[omtg::Conventional].attribute->map Attribute2Field()->asOrderedSet();
+//			var fieldPrimeryKey := object gedbm::Field{
+//				name := "id_".concat(self.name);
+//				type := gedbm::Type::int;
+//			};
+//			isComposed += fieldPrimeryKey;
+//			hasPrimaryKey += object gedbm::PrimaryKey{
+//				name := "PK_".concat(self.source.name);
+//				isPrimary := fieldPrimeryKey;
+//			};
+//			
+//		};
+//	};
+	
+//	result.isConstraint += object gedbm::Cardinality{
+//		limit := "n";
+//		referent := object gedbm::Entity{
+			
+//			name := self.target.name;
+//			isComposed += self.target[omtg::Conventional].attribute->map Attribute2Field()->asOrderedSet();
+//			var fieldPrimeryKey := object gedbm::Field{
+//				name := "id_".concat(self.target.name);
+//				type := gedbm::Type::int;
+//			};
+//			isComposed += fieldPrimeryKey;
+//			hasPrimaryKey += object gedbm::PrimaryKey{
+//				name := "PK_".concat(self.target.name);
+//				isPrimary := fieldPrimeryKey;
+//			};
+			
+//		};
+//	};

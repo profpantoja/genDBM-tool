@@ -1,0 +1,8 @@
+[comment encoding = UTF-8 /]
+[module PrintRelationCharacteristics('http://br.cefet.rj.mda.gedbm')]
+
+[import database::entity::key::PrintCandidateKey /]
+
+[template public PrintRelationCharacteristics(aCardinality : OrderedSet(Cardinality))]
+[for (iCardinality : Cardinality | aCardinality)][PrintCandidateKey(iCardinality.referent)/][/for]
+[/template]

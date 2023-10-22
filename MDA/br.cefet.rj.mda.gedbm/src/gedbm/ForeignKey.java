@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm;
 
@@ -18,11 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link gedbm.ForeignKey#getCode <em>Code</em>}</li>
- *   <li>{@link gedbm.ForeignKey#getName <em>Name</em>}</li>
  *   <li>{@link gedbm.ForeignKey#getRefersTo <em>Refers To</em>}</li>
  *   <li>{@link gedbm.ForeignKey#getIsForeign <em>Is Foreign</em>}</li>
  *   <li>{@link gedbm.ForeignKey#getReferences <em>References</em>}</li>
+ *   <li>{@link gedbm.ForeignKey#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,58 +26,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface ForeignKey extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Code</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Code</em>' attribute.
-	 * @see #setCode(int)
-	 * @see gedbm.GedbmPackage#getForeignKey_Code()
-	 * @model
-	 * @generated
-	 */
-	int getCode();
-
-	/**
-	 * Sets the value of the '{@link gedbm.ForeignKey#getCode <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Code</em>' attribute.
-	 * @see #getCode()
-	 * @generated
-	 */
-	void setCode(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see gedbm.GedbmPackage#getForeignKey_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link gedbm.ForeignKey#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Refers To</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -150,5 +93,31 @@ public interface ForeignKey extends EObject {
 	 * @generated
 	 */
 	void setReferences(Entity value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see gedbm.GedbmPackage#getForeignKey_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link gedbm.ForeignKey#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // ForeignKey

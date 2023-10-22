@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.provider;
 
@@ -64,57 +60,12 @@ public class ForeignKeyItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCodePropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
 			addRefersToPropertyDescriptor(object);
 			addIsForeignPropertyDescriptor(object);
 			addReferencesPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Code feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCodePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ForeignKey_code_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ForeignKey_code_feature", "_UI_ForeignKey_type"),
-				 GedbmPackage.Literals.FOREIGN_KEY__CODE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ForeignKey_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ForeignKey_name_feature", "_UI_ForeignKey_type"),
-				 GedbmPackage.Literals.FOREIGN_KEY__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -184,6 +135,28 @@ public class ForeignKeyItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ForeignKey_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ForeignKey_name_feature", "_UI_ForeignKey_type"),
+				 GedbmPackage.Literals.FOREIGN_KEY__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns ForeignKey.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -220,7 +193,6 @@ public class ForeignKeyItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ForeignKey.class)) {
-			case GedbmPackage.FOREIGN_KEY__CODE:
 			case GedbmPackage.FOREIGN_KEY__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

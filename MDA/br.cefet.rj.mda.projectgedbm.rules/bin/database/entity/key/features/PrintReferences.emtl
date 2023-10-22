@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="PrintReferences" nsURI="database::entity::key::features::PrintReferences" startHeaderPosition="29" endHeaderPosition="180">
+    <input>
+      <takesTypesFrom href="http://br.cefet.rj.mda.gedbm#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Template" name="PrintReferences" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="REFERENCES "/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ecore:EClass" href="http://br.cefet.rj.mda.gedbm#//Entity"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aForeign" referredVariable="/0/PrintReferences/aForeign">
+            <eType xsi:type="ecore:EClass" href="http://br.cefet.rj.mda.gedbm#//ForeignKey"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://br.cefet.rj.mda.gedbm#//ForeignKey/References"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://br.cefet.rj.mda.gedbm#//Entity/name"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" ("/>
+      <body xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/7/Sequence(String)">
+        <source xsi:type="ocl.ecore:PropertyCallExp" eType="/7/OrderedSet(Field)">
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EClass" href="http://br.cefet.rj.mda.gedbm#//PrimaryKey"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aForeign" referredVariable="/0/PrintReferences/aForeign">
+              <eType xsi:type="ecore:EClass" href="http://br.cefet.rj.mda.gedbm#//ForeignKey"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://br.cefet.rj.mda.gedbm#//ForeignKey/refersTo"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://br.cefet.rj.mda.gedbm#//PrimaryKey/isPrimary"/>
+        </source>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/PrintReferences/collect/temp1">
+            <eType xsi:type="ecore:EClass" href="http://br.cefet.rj.mda.gedbm#//Field"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://br.cefet.rj.mda.gedbm#//Field/name"/>
+        </body>
+        <iterator xsi:type="ocl.ecore:Variable" name="temp1">
+          <eType xsi:type="ecore:EClass" href="http://br.cefet.rj.mda.gedbm#//Field"/>
+        </iterator>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")"/>
+      <parameter name="aForeign">
+        <eType xsi:type="ecore:EClass" href="http://br.cefet.rj.mda.gedbm#//ForeignKey"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="PrintReferences">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/PrintReferences"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aForeign">
+          <eType xsi:type="ecore:EClass" href="http://br.cefet.rj.mda.gedbm#//ForeignKey"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ForeignKey_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://br.cefet.rj.mda.gedbm#//ForeignKey"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://br.cefet.rj.mda.gedbm#//ForeignKey"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://br.cefet.rj.mda.gedbm#//ForeignKey"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://br.cefet.rj.mda.gedbm#//ForeignKey"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Field)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://br.cefet.rj.mda.gedbm#//Field"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(String)" instanceClassName="java.util.List">
+      <elementType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://br.cefet.rj.mda.gedbm#//ForeignKey"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/PrintReferences">
+      <details key="start" value="87"/>
+      <details key="end" value="232"/>
+      <details key="line" value="4"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/PrintReferences/%">
+      <details key="start" value="144"/>
+      <details key="end" value="155"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/PrintReferences/%.1">
+      <details key="start" value="156"/>
+      <details key="end" value="180"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/PrintReferences/%.1/%">
+      <details key="start" value="156"/>
+      <details key="end" value="175"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/PrintReferences/%.1/%/aForeign">
+      <details key="start" value="156"/>
+      <details key="end" value="164"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/PrintReferences/%.2">
+      <details key="start" value="182"/>
+      <details key="end" value="184"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/PrintReferences/collect">
+      <details key="start" value="185"/>
+      <details key="end" value="217"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/PrintReferences/collect/%">
+      <details key="start" value="185"/>
+      <details key="end" value="212"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/PrintReferences/collect/%/%">
+      <details key="start" value="185"/>
+      <details key="end" value="202"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/PrintReferences/collect/%/%/aForeign">
+      <details key="start" value="185"/>
+      <details key="end" value="193"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/PrintReferences/collect/%.1">
+      <details key="start" value="213"/>
+      <details key="end" value="217"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/PrintReferences/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/PrintReferences/collect/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/PrintReferences/%.3">
+      <details key="start" value="219"/>
+      <details key="end" value="220"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/PrintReferences/aForeign">
+      <details key="start" value="120"/>
+      <details key="end" value="141"/>
+      <details key="line" value="4"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

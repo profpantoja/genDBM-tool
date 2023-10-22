@@ -1,0 +1,61 @@
+CREATE DATABASE ERBD;
+
+CREATE TABLE ERBD.Cliente (
+	
+	nome varchar,
+	numero int,
+	sobrenome varchar,
+	endereco varchar,
+	telefone varchar,
+	CONSTRAINT PK_Cliente PRIMARY KEY (numero)
+);
+	
+CREATE TABLE ERBD.Categoria (
+	
+	nome varchar,
+	codigo int,
+	CONSTRAINT PK_Categoria PRIMARY KEY (codigo)
+);
+	
+CREATE TABLE ERBD.Ator (
+	
+	nome_popular varchar,
+	nome_artistico varchar,
+	data_de_nascimento date,
+	codigo int,
+	CONSTRAINT PK_Ator PRIMARY KEY (codigo)
+);
+	
+CREATE TABLE ERBD.Fita (
+	
+	numero int,
+	rolo varchar,
+	id_Cliente int,
+	id_Filme int,
+	CONSTRAINT PK_Fita PRIMARY KEY (numero),
+	CONSTRAINT FK_id_cliente FOREIGN KEY (id_Cliente) REFERENCES Cliente (numero),
+	
+	CONSTRAINT FK_id_filme FOREIGN KEY (id_Filme) REFERENCES Filme (id),
+	
+);
+
+CREATE TABLE ERBD.Filme (
+	
+	titulo varchar,
+	id int,
+	id_categoria int,
+	CONSTRAINT PK_Filme PRIMARY KEY (id),
+	CONSTRAINT FK_id_categoria FOREIGN KEY (id_categoria) REFERENCES Categoria (codigo)
+);
+
+
+CREATE TABLE ERBD.Estrela(
+	id int,
+	codigo int,
+	cod int,
+	CONSTRAINT PK_Filme_Ator PRIMARY KEY (cod),
+	CONSTRAINT FK_Filme_Ator FOREIGN KEY (codigo) REFERENCES Ator (codigo),
+	CONSTRAINT FK_Filme_Ator FOREIGN KEY (id) REFERENCES Filme (id)
+	
+);
+

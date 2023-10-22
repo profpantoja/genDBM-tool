@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm;
 
@@ -26,15 +22,6 @@ public interface GedbmFactory extends EFactory {
 	GedbmFactory eINSTANCE = gedbm.impl.GedbmFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Model</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model</em>'.
-	 * @generated
-	 */
-	Model createModel();
-
-	/**
 	 * Returns a new object of class '<em>Data Base</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -42,15 +29,6 @@ public interface GedbmFactory extends EFactory {
 	 * @generated
 	 */
 	DataBase createDataBase();
-
-	/**
-	 * Returns a new object of class '<em>Components</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Components</em>'.
-	 * @generated
-	 */
-	Components createComponents();
 
 	/**
 	 * Returns a new object of class '<em>Entity</em>'.

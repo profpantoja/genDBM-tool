@@ -1,29 +1,12 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.util;
 
-import gedbm.Cardinality;
-import gedbm.Check;
-import gedbm.Components;
-import gedbm.DataBase;
-import gedbm.DefaultValue;
-import gedbm.Entity;
-import gedbm.Field;
-import gedbm.ForeignKey;
-import gedbm.GedbmPackage;
-import gedbm.Integrity;
-import gedbm.Model;
-import gedbm.NumericLimit;
-import gedbm.PrimaryKey;
-import gedbm.Relationship;
-import gedbm.TextLimit;
+import gedbm.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
 
 /**
@@ -83,21 +66,9 @@ public class GedbmSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case GedbmPackage.MODEL: {
-				Model model = (Model)theEObject;
-				T result = caseModel(model);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case GedbmPackage.DATA_BASE: {
 				DataBase dataBase = (DataBase)theEObject;
 				T result = caseDataBase(dataBase);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GedbmPackage.COMPONENTS: {
-				Components components = (Components)theEObject;
-				T result = caseComponents(components);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -172,21 +143,6 @@ public class GedbmSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModel(Model object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Data Base</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -198,21 +154,6 @@ public class GedbmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDataBase(DataBase object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Components</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Components</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseComponents(Components object) {
 		return null;
 	}
 

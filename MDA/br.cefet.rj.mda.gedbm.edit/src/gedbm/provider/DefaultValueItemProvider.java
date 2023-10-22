@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.provider;
 
@@ -64,32 +60,9 @@ public class DefaultValueItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCodePropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Code feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCodePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DefaultValue_code_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DefaultValue_code_feature", "_UI_DefaultValue_type"),
-				 GedbmPackage.Literals.DEFAULT_VALUE__CODE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -133,8 +106,10 @@ public class DefaultValueItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		DefaultValue defaultValue = (DefaultValue)object;
-		return getString("_UI_DefaultValue_type") + " " + defaultValue.getCode();
+		String label = ((DefaultValue)object).getValue();
+		return label == null || label.length() == 0 ?
+			getString("_UI_DefaultValue_type") :
+			getString("_UI_DefaultValue_type") + " " + label;
 	}
 
 	/**
@@ -149,7 +124,6 @@ public class DefaultValueItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DefaultValue.class)) {
-			case GedbmPackage.DEFAULT_VALUE__CODE:
 			case GedbmPackage.DEFAULT_VALUE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

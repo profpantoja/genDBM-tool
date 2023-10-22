@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:Trace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trace="http:///www.eclipse.org/m2m/qvt/operational/trace.ecore">
+  <traceRecords>
+    <mappingOperation name="Schema2Database" package="Schema2Database" module="Schema2Database">
+      <runtimeMappingOperation href="../br.cefet.rj.mda.gedbm.m2m/transforms/Schema2Database.qvtox#//Schema2Database"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Schema">
+        <value>
+          <modelElement href="ERBD_OMTG.omtg#_zOnOwMr1EeOJtLuNZLCE0A"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="DataBase">
+        <value>
+          <modelElement href="OMTG_teste.gedbm#/"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="Conventional2Entity" package="Conventional2Entity" module="Conventional2Entity">
+      <runtimeMappingOperation href="../br.cefet.rj.mda.gedbm.m2m/transforms/Conventional2Entity.qvtox#//Conventional2Entity"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Conventional">
+        <value>
+          <modelElement href="ERBD_OMTG.omtg#_0s1gQMr1EeOJtLuNZLCE0A"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Entity">
+        <value>
+          <modelElement href="OMTG_teste.gedbm#//@isComposed.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="Attribute2Field" package="Attribute2Field" module="Attribute2Field">
+      <runtimeMappingOperation href="../br.cefet.rj.mda.gedbm.m2m/transforms/Attribute2Field.qvtox#//Attribute2Field"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Attribute">
+        <value>
+          <modelElement href="ERBD_OMTG.omtg#__wOVMMr1EeOJtLuNZLCE0A"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Field">
+        <value>
+          <modelElement href="OMTG_teste.gedbm#//@isComposed.0/@isComposed.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="Conventional2Entity" package="Conventional2Entity" module="Conventional2Entity">
+      <runtimeMappingOperation href="../br.cefet.rj.mda.gedbm.m2m/transforms/Conventional2Entity.qvtox#//Conventional2Entity"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Conventional">
+        <value>
+          <modelElement href="ERBD_OMTG.omtg#_GWllMMr2EeOJtLuNZLCE0A"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Entity">
+        <value>
+          <modelElement href="OMTG_teste.gedbm#//@isComposed.1"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="Conventional2Entity" package="Conventional2Entity" module="Conventional2Entity">
+      <runtimeMappingOperation href="../br.cefet.rj.mda.gedbm.m2m/transforms/Conventional2Entity.qvtox#//Conventional2Entity"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Conventional">
+        <value>
+          <modelElement href="ERBD_OMTG.omtg#_LM4lwMr2EeOJtLuNZLCE0A"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Entity">
+        <value>
+          <modelElement href="OMTG_teste.gedbm#//@isComposed.2"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="Conventional2Entity" package="Conventional2Entity" module="Conventional2Entity">
+      <runtimeMappingOperation href="../br.cefet.rj.mda.gedbm.m2m/transforms/Conventional2Entity.qvtox#//Conventional2Entity"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Conventional">
+        <value>
+          <modelElement href="ERBD_OMTG.omtg#_OiLtoMr2EeOJtLuNZLCE0A"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Entity">
+        <value>
+          <modelElement href="OMTG_teste.gedbm#//@isComposed.3"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="BaseRelationship2Relationship" package="BaseRelationship2Relationship" module="BaseRelationship2Relationship">
+      <runtimeMappingOperation href="../br.cefet.rj.mda.gedbm.m2m/transforms/BaseRelationship2Relationship.qvtox#//BaseRelationship2Relationship"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="baseRelationship">
+        <value>
+          <modelElement href="ERBD_OMTG.omtg#_Qtz3sMr2EeOJtLuNZLCE0A"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="entities" type="OrderedSet(Entity)">
+        <value collectionType="OclCollection">
+          <collection>
+            <modelElement href="OMTG_teste.gedbm#//@isComposed.0"/>
+          </collection>
+          <collection>
+            <modelElement href="OMTG_teste.gedbm#//@isComposed.1"/>
+          </collection>
+          <collection>
+            <modelElement href="OMTG_teste.gedbm#//@isComposed.2"/>
+          </collection>
+          <collection>
+            <modelElement href="OMTG_teste.gedbm#//@isComposed.3"/>
+          </collection>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="Relationship">
+        <value>
+          <modelElement href="OMTG_teste.gedbm#//@hasInteraction.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="BaseRelationship2Relationship" package="BaseRelationship2Relationship" module="BaseRelationship2Relationship">
+      <runtimeMappingOperation href="../br.cefet.rj.mda.gedbm.m2m/transforms/BaseRelationship2Relationship.qvtox#//BaseRelationship2Relationship"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="baseRelationship">
+        <value>
+          <modelElement href="ERBD_OMTG.omtg#_UuZ_UMr2EeOJtLuNZLCE0A"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="entities" type="OrderedSet(Entity)">
+        <value collectionType="OclCollection">
+          <collection>
+            <modelElement href="OMTG_teste.gedbm#//@isComposed.0"/>
+          </collection>
+          <collection>
+            <modelElement href="OMTG_teste.gedbm#//@isComposed.1"/>
+          </collection>
+          <collection>
+            <modelElement href="OMTG_teste.gedbm#//@isComposed.2"/>
+          </collection>
+          <collection>
+            <modelElement href="OMTG_teste.gedbm#//@isComposed.3"/>
+          </collection>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="Relationship">
+        <value>
+          <modelElement href="OMTG_teste.gedbm#//@hasInteraction.1"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="BaseRelationship2Relationship" package="BaseRelationship2Relationship" module="BaseRelationship2Relationship">
+      <runtimeMappingOperation href="../br.cefet.rj.mda.gedbm.m2m/transforms/BaseRelationship2Relationship.qvtox#//BaseRelationship2Relationship"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="baseRelationship">
+        <value>
+          <modelElement href="ERBD_OMTG.omtg#_cZnXgMr2EeOJtLuNZLCE0A"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="entities" type="OrderedSet(Entity)">
+        <value collectionType="OclCollection">
+          <collection>
+            <modelElement href="OMTG_teste.gedbm#//@isComposed.0"/>
+          </collection>
+          <collection>
+            <modelElement href="OMTG_teste.gedbm#//@isComposed.1"/>
+          </collection>
+          <collection>
+            <modelElement href="OMTG_teste.gedbm#//@isComposed.2"/>
+          </collection>
+          <collection>
+            <modelElement href="OMTG_teste.gedbm#//@isComposed.3"/>
+          </collection>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="Relationship">
+        <value>
+          <modelElement href="OMTG_teste.gedbm#//@hasInteraction.2"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+</trace:Trace>

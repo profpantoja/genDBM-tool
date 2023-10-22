@@ -1,0 +1,26 @@
+[comment encoding = UTF-8 /]
+[module PrintGeograficEntity('http://br.cefet.rj.mda.gedbm')]
+
+[template public PrintGeograficEntity(aEntity : Entity)]
+[if (aEntity.type.toString() = 'NetworkClass' or aEntity.type.toString() = 'Sampling')]
+	[aEntity.name/] MultiPoint,
+[/if]
+[if (aEntity.type.toString() = 'Polygon' or aEntity.type.toString() = 'Tesselation' )]
+	[aEntity.name/] Polygon,
+[/if]
+[if (aEntity.type.toString() = 'Point' or aEntity.type.toString() = 'Node')]
+	[aEntity.name/] Point,
+[/if]
+[if (aEntity.type.toString() = 'Line' or aEntity.type.toString() = 'UnidirectionalLine')]
+	[aEntity.name/] LineString,
+[/if]
+[if (aEntity.type.toString() = 'AdjacentPolygons' or aEntity.type.toString() = 'Isoline')]
+	[aEntity.name/] MultiPolygon,
+[/if]
+[if (aEntity.type.toString() = 'BidirectionalLine')]
+	[aEntity.name/] MultiLinestring,
+[/if]
+[/template]
+
+
+

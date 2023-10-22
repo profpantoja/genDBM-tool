@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module generate('http://br.cefet.rj.mda.gedbm')]
+
+[import database::ToDataBase /]
+
+[template public generate(aDataBase : DataBase)]
+[comment @main/]
+[file (aDataBase.name+'.txt', false, 'UTF-8')]
+[ToDataBase(aDataBase)/]
+[/file]
+[/template]

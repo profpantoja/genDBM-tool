@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.provider;
 
@@ -64,33 +60,10 @@ public class IntegrityItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCodePropertyDescriptor(object);
 			addNot_nullPropertyDescriptor(object);
 			addUniquePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Code feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCodePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Integrity_code_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Integrity_code_feature", "_UI_Integrity_type"),
-				 GedbmPackage.Literals.INTEGRITY__CODE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -157,7 +130,7 @@ public class IntegrityItemProvider
 	@Override
 	public String getText(Object object) {
 		Integrity integrity = (Integrity)object;
-		return getString("_UI_Integrity_type") + " " + integrity.getCode();
+		return getString("_UI_Integrity_type") + " " + integrity.isNot_null();
 	}
 
 	/**
@@ -172,7 +145,6 @@ public class IntegrityItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Integrity.class)) {
-			case GedbmPackage.INTEGRITY__CODE:
 			case GedbmPackage.INTEGRITY__NOT_NULL:
 			case GedbmPackage.INTEGRITY__UNIQUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

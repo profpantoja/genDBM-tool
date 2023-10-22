@@ -1,0 +1,11 @@
+modeltype gedbm uses gedbm('http://br.cefet.rj.mda.gedbm');
+modeltype omtg uses omtg('http://www.ifc-camboriu.edu.br/~frozza/omtg');
+
+transformation Attribute2Field( in omtgModel : omtg, out gedbm : gedbm );
+
+mapping omtg::Attribute :: Attribute2Field() : gedbm::Field {
+init { log("Tranforming Attribute to Field.");}
+	result.name := self.name;
+	result.type := gedbm::Type::varchar;
+	end { log("Atribute2Field Finished.");}
+}

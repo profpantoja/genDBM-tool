@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.provider;
 
@@ -64,32 +60,9 @@ public class TextLimitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCodePropertyDescriptor(object);
 			addSizePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Code feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCodePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TextLimit_code_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TextLimit_code_feature", "_UI_TextLimit_type"),
-				 GedbmPackage.Literals.TEXT_LIMIT__CODE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -134,7 +107,7 @@ public class TextLimitItemProvider
 	@Override
 	public String getText(Object object) {
 		TextLimit textLimit = (TextLimit)object;
-		return getString("_UI_TextLimit_type") + " " + textLimit.getCode();
+		return getString("_UI_TextLimit_type") + " " + textLimit.getSize();
 	}
 
 	/**
@@ -149,7 +122,6 @@ public class TextLimitItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TextLimit.class)) {
-			case GedbmPackage.TEXT_LIMIT__CODE:
 			case GedbmPackage.TEXT_LIMIT__SIZE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

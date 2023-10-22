@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmftool:ToolRegistry
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="gedbmPalette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="gedbm">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Entity"
+          description="Create a new Entity.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/Entity.gif"
+            bundle="br.cefet.rj.mda.gedbm.edit"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/Entity.gif"
+            bundle="br.cefet.rj.mda.gedbm.edit"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Relationship"
+          description="Create a new Relationship.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/Relationship.gif"
+            bundle="br.cefet.rj.mda.gedbm.edit"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/Relationship.gif"
+            bundle="br.cefet.rj.mda.gedbm.edit"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Fields of Entity"
+          description="Create new Field in a Entity.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/Field.gif"
+            bundle="br.cefet.rj.mda.gedbm.edit"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/Field.gif"
+            bundle="br.cefet.rj.mda.gedbm.edit"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Fields of Relationship"
+          description="Create new field in a Relationship.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/Field.gif"
+            bundle="br.cefet.rj.mda.gedbm.edit"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/Field.gif"
+            bundle="br.cefet.rj.mda.gedbm.edit"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Relationship - Entity"
+          description="Create a link between a Relationship and a Entity.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/RelationshipEntity.gif"
+            bundle="br.cefet.rj.mda.gedbm.edit"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/RelationshipEntity.gif"
+            bundle="br.cefet.rj.mda.gedbm.edit"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Cardinality"
+          description="Create the Cardinality of a Relationship.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/Cardinality.gif"
+            bundle="br.cefet.rj.mda.gedbm.edit"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/Cardinality.gif"
+            bundle="br.cefet.rj.mda.gedbm.edit"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Especialization"
+          description="Create a especialization link.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/Entity.subgroup.Of.Entity.gif"
+            bundle="br.cefet.rj.mda.gedbm.edit"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/Entity.subgroup.Of.Entity.gif"
+            bundle="br.cefet.rj.mda.gedbm.edit"/>
+      </tools>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>

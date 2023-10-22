@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.impl;
 
@@ -13,20 +9,15 @@ import gedbm.ForeignKey;
 import gedbm.GedbmPackage;
 import gedbm.PrimaryKey;
 import gedbm.Relationship;
-
+import gedbm.RelationshipType;
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -38,41 +29,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link gedbm.impl.RelationshipImpl#getCode <em>Code</em>}</li>
  *   <li>{@link gedbm.impl.RelationshipImpl#getName <em>Name</em>}</li>
- *   <li>{@link gedbm.impl.RelationshipImpl#getRelated <em>Related</em>}</li>
  *   <li>{@link gedbm.impl.RelationshipImpl#getIsConstraint <em>Is Constraint</em>}</li>
  *   <li>{@link gedbm.impl.RelationshipImpl#getIsMapping <em>Is Mapping</em>}</li>
  *   <li>{@link gedbm.impl.RelationshipImpl#getWouldHasPrimary <em>Would Has Primary</em>}</li>
  *   <li>{@link gedbm.impl.RelationshipImpl#getWouldHasForeign <em>Would Has Foreign</em>}</li>
  *   <li>{@link gedbm.impl.RelationshipImpl#isIsAssociative <em>Is Associative</em>}</li>
  *   <li>{@link gedbm.impl.RelationshipImpl#getEntity_relation_name <em>Entity relation name</em>}</li>
+ *   <li>{@link gedbm.impl.RelationshipImpl#getType <em>Type</em>}</li>
+ *   <li>{@link gedbm.impl.RelationshipImpl#getRelated <em>Related</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RelationshipImpl extends EObjectImpl implements Relationship {
-	/**
-	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int CODE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected int code = CODE_EDEFAULT;
-
+public class RelationshipImpl extends MinimalEObjectImpl.Container implements Relationship {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -92,16 +63,6 @@ public class RelationshipImpl extends EObjectImpl implements Relationship {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getRelated() <em>Related</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRelated()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Entity> related;
 
 	/**
 	 * The cached value of the '{@link #getIsConstraint() <em>Is Constraint</em>}' containment reference list.
@@ -184,6 +145,36 @@ public class RelationshipImpl extends EObjectImpl implements Relationship {
 	protected String entity_relation_name = ENTITY_RELATION_NAME_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final RelationshipType TYPE_EDEFAULT = RelationshipType.SIMPLE;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected RelationshipType type = TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRelated() <em>Related</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRelated()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Entity> related;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -207,27 +198,6 @@ public class RelationshipImpl extends EObjectImpl implements Relationship {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getCode() {
-		return code;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCode(int newCode) {
-		int oldCode = code;
-		code = newCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GedbmPackage.RELATIONSHIP__CODE, oldCode, code));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getName() {
 		return name;
 	}
@@ -242,18 +212,6 @@ public class RelationshipImpl extends EObjectImpl implements Relationship {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GedbmPackage.RELATIONSHIP__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Entity> getRelated() {
-		if (related == null) {
-			related = new EObjectResolvingEList<Entity>(Entity.class, this, GedbmPackage.RELATIONSHIP__RELATED);
-		}
-		return related;
 	}
 
 	/**
@@ -351,6 +309,39 @@ public class RelationshipImpl extends EObjectImpl implements Relationship {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RelationshipType getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(RelationshipType newType) {
+		RelationshipType oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GedbmPackage.RELATIONSHIP__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Entity> getRelated() {
+		if (related == null) {
+			related = new EObjectResolvingEList<Entity>(Entity.class, this, GedbmPackage.RELATIONSHIP__RELATED);
+		}
+		return related;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -374,12 +365,8 @@ public class RelationshipImpl extends EObjectImpl implements Relationship {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GedbmPackage.RELATIONSHIP__CODE:
-				return getCode();
 			case GedbmPackage.RELATIONSHIP__NAME:
 				return getName();
-			case GedbmPackage.RELATIONSHIP__RELATED:
-				return getRelated();
 			case GedbmPackage.RELATIONSHIP__IS_CONSTRAINT:
 				return getIsConstraint();
 			case GedbmPackage.RELATIONSHIP__IS_MAPPING:
@@ -392,6 +379,10 @@ public class RelationshipImpl extends EObjectImpl implements Relationship {
 				return isIsAssociative();
 			case GedbmPackage.RELATIONSHIP__ENTITY_RELATION_NAME:
 				return getEntity_relation_name();
+			case GedbmPackage.RELATIONSHIP__TYPE:
+				return getType();
+			case GedbmPackage.RELATIONSHIP__RELATED:
+				return getRelated();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -405,15 +396,8 @@ public class RelationshipImpl extends EObjectImpl implements Relationship {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GedbmPackage.RELATIONSHIP__CODE:
-				setCode((Integer)newValue);
-				return;
 			case GedbmPackage.RELATIONSHIP__NAME:
 				setName((String)newValue);
-				return;
-			case GedbmPackage.RELATIONSHIP__RELATED:
-				getRelated().clear();
-				getRelated().addAll((Collection<? extends Entity>)newValue);
 				return;
 			case GedbmPackage.RELATIONSHIP__IS_CONSTRAINT:
 				getIsConstraint().clear();
@@ -437,6 +421,13 @@ public class RelationshipImpl extends EObjectImpl implements Relationship {
 			case GedbmPackage.RELATIONSHIP__ENTITY_RELATION_NAME:
 				setEntity_relation_name((String)newValue);
 				return;
+			case GedbmPackage.RELATIONSHIP__TYPE:
+				setType((RelationshipType)newValue);
+				return;
+			case GedbmPackage.RELATIONSHIP__RELATED:
+				getRelated().clear();
+				getRelated().addAll((Collection<? extends Entity>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -449,14 +440,8 @@ public class RelationshipImpl extends EObjectImpl implements Relationship {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GedbmPackage.RELATIONSHIP__CODE:
-				setCode(CODE_EDEFAULT);
-				return;
 			case GedbmPackage.RELATIONSHIP__NAME:
 				setName(NAME_EDEFAULT);
-				return;
-			case GedbmPackage.RELATIONSHIP__RELATED:
-				getRelated().clear();
 				return;
 			case GedbmPackage.RELATIONSHIP__IS_CONSTRAINT:
 				getIsConstraint().clear();
@@ -476,6 +461,12 @@ public class RelationshipImpl extends EObjectImpl implements Relationship {
 			case GedbmPackage.RELATIONSHIP__ENTITY_RELATION_NAME:
 				setEntity_relation_name(ENTITY_RELATION_NAME_EDEFAULT);
 				return;
+			case GedbmPackage.RELATIONSHIP__TYPE:
+				setType(TYPE_EDEFAULT);
+				return;
+			case GedbmPackage.RELATIONSHIP__RELATED:
+				getRelated().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -488,12 +479,8 @@ public class RelationshipImpl extends EObjectImpl implements Relationship {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GedbmPackage.RELATIONSHIP__CODE:
-				return code != CODE_EDEFAULT;
 			case GedbmPackage.RELATIONSHIP__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case GedbmPackage.RELATIONSHIP__RELATED:
-				return related != null && !related.isEmpty();
 			case GedbmPackage.RELATIONSHIP__IS_CONSTRAINT:
 				return isConstraint != null && !isConstraint.isEmpty();
 			case GedbmPackage.RELATIONSHIP__IS_MAPPING:
@@ -506,6 +493,10 @@ public class RelationshipImpl extends EObjectImpl implements Relationship {
 				return isAssociative != IS_ASSOCIATIVE_EDEFAULT;
 			case GedbmPackage.RELATIONSHIP__ENTITY_RELATION_NAME:
 				return ENTITY_RELATION_NAME_EDEFAULT == null ? entity_relation_name != null : !ENTITY_RELATION_NAME_EDEFAULT.equals(entity_relation_name);
+			case GedbmPackage.RELATIONSHIP__TYPE:
+				return type != TYPE_EDEFAULT;
+			case GedbmPackage.RELATIONSHIP__RELATED:
+				return related != null && !related.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -520,14 +511,14 @@ public class RelationshipImpl extends EObjectImpl implements Relationship {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (code: ");
-		result.append(code);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
 		result.append(", isAssociative: ");
 		result.append(isAssociative);
 		result.append(", entity_relation_name: ");
 		result.append(entity_relation_name);
+		result.append(", type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}

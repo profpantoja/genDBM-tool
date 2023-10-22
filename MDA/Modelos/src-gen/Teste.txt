@@ -1,0 +1,32 @@
+CREATE DATABASE Teste;
+
+CREATE TABLE Teste.Logradouro (
+	
+	Codigo varchar,
+	id_Logradouro int,
+	CONSTRAINT PK_Logradouro PRIMARY KEY (id_Logradouro)
+);
+	
+CREATE TABLE Teste.Lote (
+	Lote Point,
+	id_Lote int,
+	CONSTRAINT PK_Lote PRIMARY KEY (id_Lote)
+);
+	
+CREATE TABLE Teste.SegmentoDeLogradouro (
+	SegmentoDeLogradouro MultiLinestring,
+	id_SegmentoDeLogradouro int,
+	id_Logradouro int,
+	CONSTRAINT PK_SegmentoDeLogradouro PRIMARY KEY (id_SegmentoDeLogradouro),
+	CONSTRAINT FK_SegmentoDeLogradouro FOREIGN KEY (id_Logradouro) REFERENCES Logradouro (id_Logradouro)
+);
+
+CREATE TABLE Teste.Endereco (
+	Endereco MultiPolygon,
+	id_Endereco int,
+	id_Logradouro int,
+	CONSTRAINT PK_Endereco PRIMARY KEY (id_Endereco),
+	CONSTRAINT FK_Endereco FOREIGN KEY (id_Logradouro) REFERENCES Logradouro (id_Logradouro)
+);
+
+

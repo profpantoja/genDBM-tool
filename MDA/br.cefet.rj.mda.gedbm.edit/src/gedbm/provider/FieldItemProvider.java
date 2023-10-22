@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.provider;
 
@@ -67,34 +63,11 @@ public class FieldItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCodePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addHasForeignKeyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Code feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCodePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Field_code_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Field_code_feature", "_UI_Field_type"),
-				 GedbmPackage.Literals.FIELD__CODE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -233,7 +206,6 @@ public class FieldItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Field.class)) {
-			case GedbmPackage.FIELD__CODE:
 			case GedbmPackage.FIELD__NAME:
 			case GedbmPackage.FIELD__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

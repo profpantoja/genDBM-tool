@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gedbm:DataBase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gedbm="http://br.cefet.rj.mda.gedbm">
+  <isComposed name="cliente"/>
+  <isComposed name="Pedido"/>
+  <hasInteraction name="casado">
+    <isConstraint limit="1" referent="//@isComposed.0"/>
+    <isConstraint limit="n" referent="//@isComposed.0"/>
+  </hasInteraction>
+  <hasInteraction name="Faz">
+    <isConstraint limit="1" referent="//@isComposed.0"/>
+    <isConstraint limit="1" referent="//@isComposed.1"/>
+  </hasInteraction>
+</gedbm:DataBase>

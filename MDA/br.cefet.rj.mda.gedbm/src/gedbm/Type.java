@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm;
 
@@ -290,7 +286,87 @@ public enum Type implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FLOAT(26, "float", "float");
+	FLOAT(26, "float", "float"),
+
+	/**
+	 * The '<em><b>Geometry</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #GEOMETRY_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	GEOMETRY(27, "Geometry", "Geometry"),
+
+	/**
+	 * The '<em><b>Point</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #POINT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	POINT(28, "Point", "Point"),
+
+	/**
+	 * The '<em><b>Line String</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #LINE_STRING_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	LINE_STRING(29, "LineString", "LineString"),
+
+	/**
+	 * The '<em><b>Polygon</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #POLYGON_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	POLYGON(30, "Polygon", "Polygon"),
+
+	/**
+	 * The '<em><b>Geometry Collection</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #GEOMETRY_COLLECTION_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	GEOMETRY_COLLECTION(31, "GeometryCollection", "GeometryCollection"),
+
+	/**
+	 * The '<em><b>Multi Point</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MULTI_POINT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MULTI_POINT(32, "MultiPoint", "MultiPoint"),
+
+	/**
+	 * The '<em><b>Multi Line String</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MULTI_LINE_STRING_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MULTI_LINE_STRING(33, "MultiLineString", "MultiLineString"),
+
+	/**
+	 * The '<em><b>Multi Polygon</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MULTI_POLYGON_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MULTI_POLYGON(34, "MultiPolygon", "MultiPolygon");
 
 	/**
 	 * The '<em><b>Int</b></em>' literal value.
@@ -698,6 +774,126 @@ public enum Type implements Enumerator {
 	public static final int FLOAT_VALUE = 26;
 
 	/**
+	 * The '<em><b>Geometry</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Geometry</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #GEOMETRY
+	 * @model name="Geometry"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int GEOMETRY_VALUE = 27;
+
+	/**
+	 * The '<em><b>Point</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Point</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #POINT
+	 * @model name="Point"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int POINT_VALUE = 28;
+
+	/**
+	 * The '<em><b>Line String</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Line String</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #LINE_STRING
+	 * @model name="LineString"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int LINE_STRING_VALUE = 29;
+
+	/**
+	 * The '<em><b>Polygon</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Polygon</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #POLYGON
+	 * @model name="Polygon"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int POLYGON_VALUE = 30;
+
+	/**
+	 * The '<em><b>Geometry Collection</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Geometry Collection</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #GEOMETRY_COLLECTION
+	 * @model name="GeometryCollection"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int GEOMETRY_COLLECTION_VALUE = 31;
+
+	/**
+	 * The '<em><b>Multi Point</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Multi Point</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #MULTI_POINT
+	 * @model name="MultiPoint"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MULTI_POINT_VALUE = 32;
+
+	/**
+	 * The '<em><b>Multi Line String</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Multi Line String</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #MULTI_LINE_STRING
+	 * @model name="MultiLineString"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MULTI_LINE_STRING_VALUE = 33;
+
+	/**
+	 * The '<em><b>Multi Polygon</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Multi Polygon</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #MULTI_POLYGON
+	 * @model name="MultiPolygon"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MULTI_POLYGON_VALUE = 34;
+
+	/**
 	 * An array of all the '<em><b>Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -732,6 +928,14 @@ public enum Type implements Enumerator {
 			DOUBLE_PRECISION,
 			CHARACTER,
 			FLOAT,
+			GEOMETRY,
+			POINT,
+			LINE_STRING,
+			POLYGON,
+			GEOMETRY_COLLECTION,
+			MULTI_POINT,
+			MULTI_LINE_STRING,
+			MULTI_POLYGON,
 		};
 
 	/**
@@ -809,6 +1013,14 @@ public enum Type implements Enumerator {
 			case DOUBLE_PRECISION_VALUE: return DOUBLE_PRECISION;
 			case CHARACTER_VALUE: return CHARACTER;
 			case FLOAT_VALUE: return FLOAT;
+			case GEOMETRY_VALUE: return GEOMETRY;
+			case POINT_VALUE: return POINT;
+			case LINE_STRING_VALUE: return LINE_STRING;
+			case POLYGON_VALUE: return POLYGON;
+			case GEOMETRY_COLLECTION_VALUE: return GEOMETRY_COLLECTION;
+			case MULTI_POINT_VALUE: return MULTI_POINT;
+			case MULTI_LINE_STRING_VALUE: return MULTI_LINE_STRING;
+			case MULTI_POLYGON_VALUE: return MULTI_POLYGON;
 		}
 		return null;
 	}

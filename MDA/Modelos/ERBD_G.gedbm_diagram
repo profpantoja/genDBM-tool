@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gedbm="http://br.cefet.rj.mda.gedbm" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_DZ4uEMr3EeOJtLuNZLCE0A" type="Gedbm" name="ERBD_G.gedbm_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_FnvswMr3EeOJtLuNZLCE0A" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Fnw64Mr3EeOJtLuNZLCE0A" type="5001"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_Fnvswcr3EeOJtLuNZLCE0A"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Fnvswsr3EeOJtLuNZLCE0A" fontName="Sans"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_Fnvsw8r3EeOJtLuNZLCE0A"/>
+    <element xmi:type="gedbm:Relationship" href="ERBD_G.gedbm#//@hasInteraction.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FnvsxMr3EeOJtLuNZLCE0A" x="100"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_Fnxh8Mr3EeOJtLuNZLCE0A" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_FnyJAMr3EeOJtLuNZLCE0A" type="5001"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_Fnxh8cr3EeOJtLuNZLCE0A"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Fnxh8sr3EeOJtLuNZLCE0A" fontName="Sans"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_Fnxh88r3EeOJtLuNZLCE0A"/>
+    <element xmi:type="gedbm:Relationship" href="ERBD_G.gedbm#//@hasInteraction.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fnxh9Mr3EeOJtLuNZLCE0A" x="525" y="95"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_FnyJAcr3EeOJtLuNZLCE0A" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_FnywEMr3EeOJtLuNZLCE0A" type="5001"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_FnyJAsr3EeOJtLuNZLCE0A"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_FnyJA8r3EeOJtLuNZLCE0A" fontName="Sans"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_FnyJBMr3EeOJtLuNZLCE0A"/>
+    <element xmi:type="gedbm:Relationship" href="ERBD_G.gedbm#//@hasInteraction.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FnyJBcr3EeOJtLuNZLCE0A" x="265"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_Fnz-MMr3EeOJtLuNZLCE0A" type="2002">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Fn0lQMr3EeOJtLuNZLCE0A" type="5002"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_Fnz-Mcr3EeOJtLuNZLCE0A"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Fnz-Msr3EeOJtLuNZLCE0A" fontName="Sans"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_Fnz-M8r3EeOJtLuNZLCE0A"/>
+    <element xmi:type="gedbm:Entity" href="ERBD_G.gedbm#//@isComposed.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fnz-NMr3EeOJtLuNZLCE0A" x="160" y="120"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_Fn0lQcr3EeOJtLuNZLCE0A" type="2002">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Fn1MUMr3EeOJtLuNZLCE0A" type="5002"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_Fn0lQsr3EeOJtLuNZLCE0A"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Fn0lQ8r3EeOJtLuNZLCE0A" fontName="Sans"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_Fn0lRMr3EeOJtLuNZLCE0A"/>
+    <element xmi:type="gedbm:Entity" href="ERBD_G.gedbm#//@isComposed.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fn0lRcr3EeOJtLuNZLCE0A" x="310" y="120"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_Fn1zYMr3EeOJtLuNZLCE0A" type="2002">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Fn1zZcr3EeOJtLuNZLCE0A" type="5002"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_Fn1zYcr3EeOJtLuNZLCE0A"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Fn1zYsr3EeOJtLuNZLCE0A" fontName="Sans"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_Fn1zY8r3EeOJtLuNZLCE0A"/>
+    <element xmi:type="gedbm:Entity" href="ERBD_G.gedbm#//@isComposed.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fn1zZMr3EeOJtLuNZLCE0A" x="20" y="120"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_Fn2acMr3EeOJtLuNZLCE0A" type="2002">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Fn3BgMr3EeOJtLuNZLCE0A" type="5002"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_Fn2accr3EeOJtLuNZLCE0A"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Fn2acsr3EeOJtLuNZLCE0A" fontName="Sans"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_Fn2ac8r3EeOJtLuNZLCE0A"/>
+    <element xmi:type="gedbm:Entity" href="ERBD_G.gedbm#//@isComposed.3"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fn2adMr3EeOJtLuNZLCE0A" x="680" y="105"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Fn5dwMr3EeOJtLuNZLCE0A" type="2003" fontName="Sans">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Fn6r4Mr3EeOJtLuNZLCE0A" type="5003"/>
+    <element xmi:type="gedbm:Field" href="ERBD_G.gedbm#//@isComposed.0/@isComposed.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fn5dwcr3EeOJtLuNZLCE0A" x="160" y="220"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Fn6r4cr3EeOJtLuNZLCE0A" type="2003" fontName="Sans">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Fn7S8Mr3EeOJtLuNZLCE0A" type="5003"/>
+    <element xmi:type="gedbm:Field" href="ERBD_G.gedbm#//@isComposed.0/@isComposed.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fn6r4sr3EeOJtLuNZLCE0A" x="245" y="220"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Fn76AMr3EeOJtLuNZLCE0A" type="2003" fontName="Sans">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Fn76Asr3EeOJtLuNZLCE0A" type="5003"/>
+    <element xmi:type="gedbm:Field" href="ERBD_G.gedbm#//@isComposed.1/@isComposed.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fn76Acr3EeOJtLuNZLCE0A" x="340" y="220"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Fn8hEMr3EeOJtLuNZLCE0A" type="2003" fontName="Sans">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Fn9IIMr3EeOJtLuNZLCE0A" type="5003"/>
+    <element xmi:type="gedbm:Field" href="ERBD_G.gedbm#//@isComposed.1/@isComposed.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fn8hEcr3EeOJtLuNZLCE0A" x="420" y="220"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Fn9IIcr3EeOJtLuNZLCE0A" type="2003" fontName="Sans">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Fn9vMMr3EeOJtLuNZLCE0A" type="5003"/>
+    <element xmi:type="gedbm:Field" href="ERBD_G.gedbm#//@isComposed.2/@isComposed.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fn9IIsr3EeOJtLuNZLCE0A" y="220"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Fn9vMcr3EeOJtLuNZLCE0A" type="2003" fontName="Sans">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Fn-WQMr3EeOJtLuNZLCE0A" type="5003"/>
+    <element xmi:type="gedbm:Field" href="ERBD_G.gedbm#//@isComposed.2/@isComposed.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fn9vMsr3EeOJtLuNZLCE0A" x="80" y="220"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Fn-9UMr3EeOJtLuNZLCE0A" type="2003" fontName="Sans">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Fn-9Usr3EeOJtLuNZLCE0A" type="5003"/>
+    <element xmi:type="gedbm:Field" href="ERBD_G.gedbm#//@isComposed.3/@isComposed.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fn-9Ucr3EeOJtLuNZLCE0A" x="550" y="220"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_DZ4uEcr3EeOJtLuNZLCE0A"/>
+  <element xmi:type="gedbm:DataBase" href="ERBD_G.gedbm#/"/>
+</notation:Diagram>

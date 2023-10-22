@@ -1,12 +1,7 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.impl;
 
-import gedbm.Components;
 import gedbm.DataBase;
 import gedbm.Entity;
 import gedbm.GedbmPackage;
@@ -23,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -36,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link gedbm.impl.DataBaseImpl#getName <em>Name</em>}</li>
- *   <li>{@link gedbm.impl.DataBaseImpl#getHas <em>Has</em>}</li>
  *   <li>{@link gedbm.impl.DataBaseImpl#getIsComposed <em>Is Composed</em>}</li>
  *   <li>{@link gedbm.impl.DataBaseImpl#getHasInteraction <em>Has Interaction</em>}</li>
  * </ul>
@@ -44,7 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class DataBaseImpl extends EObjectImpl implements DataBase {
+public class DataBaseImpl extends MinimalEObjectImpl.Container implements DataBase {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,16 +58,6 @@ public class DataBaseImpl extends EObjectImpl implements DataBase {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getHas() <em>Has</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHas()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Components> has;
 
 	/**
 	 * The cached value of the '{@link #getIsComposed() <em>Is Composed</em>}' containment reference list.
@@ -140,18 +124,6 @@ public class DataBaseImpl extends EObjectImpl implements DataBase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Components> getHas() {
-		if (has == null) {
-			has = new EObjectContainmentEList<Components>(Components.class, this, GedbmPackage.DATA_BASE__HAS);
-		}
-		return has;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Entity> getIsComposed() {
 		if (isComposed == null) {
 			isComposed = new EObjectContainmentEList<Entity>(Entity.class, this, GedbmPackage.DATA_BASE__IS_COMPOSED);
@@ -179,8 +151,6 @@ public class DataBaseImpl extends EObjectImpl implements DataBase {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case GedbmPackage.DATA_BASE__HAS:
-				return ((InternalEList<?>)getHas()).basicRemove(otherEnd, msgs);
 			case GedbmPackage.DATA_BASE__IS_COMPOSED:
 				return ((InternalEList<?>)getIsComposed()).basicRemove(otherEnd, msgs);
 			case GedbmPackage.DATA_BASE__HAS_INTERACTION:
@@ -199,8 +169,6 @@ public class DataBaseImpl extends EObjectImpl implements DataBase {
 		switch (featureID) {
 			case GedbmPackage.DATA_BASE__NAME:
 				return getName();
-			case GedbmPackage.DATA_BASE__HAS:
-				return getHas();
 			case GedbmPackage.DATA_BASE__IS_COMPOSED:
 				return getIsComposed();
 			case GedbmPackage.DATA_BASE__HAS_INTERACTION:
@@ -220,10 +188,6 @@ public class DataBaseImpl extends EObjectImpl implements DataBase {
 		switch (featureID) {
 			case GedbmPackage.DATA_BASE__NAME:
 				setName((String)newValue);
-				return;
-			case GedbmPackage.DATA_BASE__HAS:
-				getHas().clear();
-				getHas().addAll((Collection<? extends Components>)newValue);
 				return;
 			case GedbmPackage.DATA_BASE__IS_COMPOSED:
 				getIsComposed().clear();
@@ -248,9 +212,6 @@ public class DataBaseImpl extends EObjectImpl implements DataBase {
 			case GedbmPackage.DATA_BASE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case GedbmPackage.DATA_BASE__HAS:
-				getHas().clear();
-				return;
 			case GedbmPackage.DATA_BASE__IS_COMPOSED:
 				getIsComposed().clear();
 				return;
@@ -271,8 +232,6 @@ public class DataBaseImpl extends EObjectImpl implements DataBase {
 		switch (featureID) {
 			case GedbmPackage.DATA_BASE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case GedbmPackage.DATA_BASE__HAS:
-				return has != null && !has.isEmpty();
 			case GedbmPackage.DATA_BASE__IS_COMPOSED:
 				return isComposed != null && !isComposed.isEmpty();
 			case GedbmPackage.DATA_BASE__HAS_INTERACTION:

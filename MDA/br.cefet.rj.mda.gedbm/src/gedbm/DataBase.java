@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm;
 
@@ -19,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link gedbm.DataBase#getName <em>Name</em>}</li>
- *   <li>{@link gedbm.DataBase#getHas <em>Has</em>}</li>
  *   <li>{@link gedbm.DataBase#getIsComposed <em>Is Composed</em>}</li>
  *   <li>{@link gedbm.DataBase#getHasInteraction <em>Has Interaction</em>}</li>
  * </ul>
@@ -55,22 +50,6 @@ public interface DataBase extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Has</b></em>' containment reference list.
-	 * The list contents are of type {@link gedbm.Components}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Has</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has</em>' containment reference list.
-	 * @see gedbm.GedbmPackage#getDataBase_Has()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<Components> getHas();
 
 	/**
 	 * Returns the value of the '<em><b>Is Composed</b></em>' containment reference list.

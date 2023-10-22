@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.provider;
 
@@ -76,29 +72,6 @@ public class GedbmItemProviderAdapterFactory extends GedbmAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link gedbm.Model} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ModelItemProvider modelItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link gedbm.Model}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createModelAdapter() {
-		if (modelItemProvider == null) {
-			modelItemProvider = new ModelItemProvider(this);
-		}
-
-		return modelItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link gedbm.DataBase} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,29 +92,6 @@ public class GedbmItemProviderAdapterFactory extends GedbmAdapterFactory impleme
 		}
 
 		return dataBaseItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link gedbm.Components} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ComponentsItemProvider componentsItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link gedbm.Components}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createComponentsAdapter() {
-		if (componentsItemProvider == null) {
-			componentsItemProvider = new ComponentsItemProvider(this);
-		}
-
-		return componentsItemProvider;
 	}
 
 	/**
@@ -496,9 +446,7 @@ public class GedbmItemProviderAdapterFactory extends GedbmAdapterFactory impleme
 	 * @generated
 	 */
 	public void dispose() {
-		if (modelItemProvider != null) modelItemProvider.dispose();
 		if (dataBaseItemProvider != null) dataBaseItemProvider.dispose();
-		if (componentsItemProvider != null) componentsItemProvider.dispose();
 		if (entityItemProvider != null) entityItemProvider.dispose();
 		if (relationshipItemProvider != null) relationshipItemProvider.dispose();
 		if (cardinalityItemProvider != null) cardinalityItemProvider.dispose();

@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: gedbm.provider.GedbmEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: gedbm.provider
 Require-Bundle: org.eclipse.core.runtime,
  br.cefet.rj.mda.gedbm;visibility:=reexport,

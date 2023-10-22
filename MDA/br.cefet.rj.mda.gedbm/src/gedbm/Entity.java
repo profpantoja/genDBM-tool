@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm;
 
@@ -18,13 +14,13 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link gedbm.Entity#getCode <em>Code</em>}</li>
  *   <li>{@link gedbm.Entity#getName <em>Name</em>}</li>
  *   <li>{@link gedbm.Entity#getIsComposed <em>Is Composed</em>}</li>
  *   <li>{@link gedbm.Entity#getSubgroupOf <em>Subgroup Of</em>}</li>
  *   <li>{@link gedbm.Entity#getHasForeignKey <em>Has Foreign Key</em>}</li>
  *   <li>{@link gedbm.Entity#getHasPrimaryKey <em>Has Primary Key</em>}</li>
  *   <li>{@link gedbm.Entity#getHasCheck <em>Has Check</em>}</li>
+ *   <li>{@link gedbm.Entity#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,32 +29,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Entity extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Code</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Code</em>' attribute.
-	 * @see #setCode(int)
-	 * @see gedbm.GedbmPackage#getEntity_Code()
-	 * @model
-	 * @generated
-	 */
-	int getCode();
-
-	/**
-	 * Sets the value of the '{@link gedbm.Entity#getCode <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Code</em>' attribute.
-	 * @see #getCode()
-	 * @generated
-	 */
-	void setCode(int value);
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -174,5 +144,34 @@ public interface Entity extends EObject {
 	 * @generated
 	 */
 	EList<Check> getHasCheck();
+
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link gedbm.EntityType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see gedbm.EntityType
+	 * @see #setType(EntityType)
+	 * @see gedbm.GedbmPackage#getEntity_Type()
+	 * @model
+	 * @generated
+	 */
+	EntityType getType();
+
+	/**
+	 * Sets the value of the '{@link gedbm.Entity#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see gedbm.EntityType
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(EntityType value);
 
 } // Entity

@@ -1,0 +1,7 @@
+# Tracing options for the br.cefet.rj.mda.gedbm.diagram plug-in
+
+# Common issues
+br.cefet.rj.mda.gedbm.diagram/debug=false
+
+# Visual IDs
+br.cefet.rj.mda.gedbm.diagram/debug/visualID=false

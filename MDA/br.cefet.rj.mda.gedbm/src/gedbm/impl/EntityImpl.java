@@ -1,13 +1,10 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package gedbm.impl;
 
 import gedbm.Check;
 import gedbm.Entity;
+import gedbm.EntityType;
 import gedbm.Field;
 import gedbm.ForeignKey;
 import gedbm.GedbmPackage;
@@ -24,7 +21,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -36,39 +33,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link gedbm.impl.EntityImpl#getCode <em>Code</em>}</li>
  *   <li>{@link gedbm.impl.EntityImpl#getName <em>Name</em>}</li>
  *   <li>{@link gedbm.impl.EntityImpl#getIsComposed <em>Is Composed</em>}</li>
  *   <li>{@link gedbm.impl.EntityImpl#getSubgroupOf <em>Subgroup Of</em>}</li>
  *   <li>{@link gedbm.impl.EntityImpl#getHasForeignKey <em>Has Foreign Key</em>}</li>
  *   <li>{@link gedbm.impl.EntityImpl#getHasPrimaryKey <em>Has Primary Key</em>}</li>
  *   <li>{@link gedbm.impl.EntityImpl#getHasCheck <em>Has Check</em>}</li>
+ *   <li>{@link gedbm.impl.EntityImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EntityImpl extends EObjectImpl implements Entity {
-	/**
-	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int CODE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected int code = CODE_EDEFAULT;
-
+public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -140,6 +117,26 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	protected EList<Check> hasCheck;
 
 	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EntityType TYPE_EDEFAULT = EntityType.CONVENTIONAL;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityType type = TYPE_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -156,27 +153,6 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	@Override
 	protected EClass eStaticClass() {
 		return GedbmPackage.Literals.ENTITY;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getCode() {
-		return code;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCode(int newCode) {
-		int oldCode = code;
-		code = newCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GedbmPackage.ENTITY__CODE, oldCode, code));
 	}
 
 	/**
@@ -291,6 +267,27 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EntityType getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(EntityType newType) {
+		EntityType oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GedbmPackage.ENTITY__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -314,8 +311,6 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GedbmPackage.ENTITY__CODE:
-				return getCode();
 			case GedbmPackage.ENTITY__NAME:
 				return getName();
 			case GedbmPackage.ENTITY__IS_COMPOSED:
@@ -329,6 +324,8 @@ public class EntityImpl extends EObjectImpl implements Entity {
 				return getHasPrimaryKey();
 			case GedbmPackage.ENTITY__HAS_CHECK:
 				return getHasCheck();
+			case GedbmPackage.ENTITY__TYPE:
+				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -342,9 +339,6 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GedbmPackage.ENTITY__CODE:
-				setCode((Integer)newValue);
-				return;
 			case GedbmPackage.ENTITY__NAME:
 				setName((String)newValue);
 				return;
@@ -367,6 +361,9 @@ public class EntityImpl extends EObjectImpl implements Entity {
 				getHasCheck().clear();
 				getHasCheck().addAll((Collection<? extends Check>)newValue);
 				return;
+			case GedbmPackage.ENTITY__TYPE:
+				setType((EntityType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -379,9 +376,6 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GedbmPackage.ENTITY__CODE:
-				setCode(CODE_EDEFAULT);
-				return;
 			case GedbmPackage.ENTITY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -400,6 +394,9 @@ public class EntityImpl extends EObjectImpl implements Entity {
 			case GedbmPackage.ENTITY__HAS_CHECK:
 				getHasCheck().clear();
 				return;
+			case GedbmPackage.ENTITY__TYPE:
+				setType(TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -412,8 +409,6 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GedbmPackage.ENTITY__CODE:
-				return code != CODE_EDEFAULT;
 			case GedbmPackage.ENTITY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case GedbmPackage.ENTITY__IS_COMPOSED:
@@ -426,6 +421,8 @@ public class EntityImpl extends EObjectImpl implements Entity {
 				return hasPrimaryKey != null && !hasPrimaryKey.isEmpty();
 			case GedbmPackage.ENTITY__HAS_CHECK:
 				return hasCheck != null && !hasCheck.isEmpty();
+			case GedbmPackage.ENTITY__TYPE:
+				return type != TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -440,10 +437,10 @@ public class EntityImpl extends EObjectImpl implements Entity {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (code: ");
-		result.append(code);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
+		result.append(", type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}

@@ -1,46 +1,218 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="gedbm">
-  <figures name="Default">
-    <figures xsi:type="gmfgraph:PolylineDecoration" name="EntitySubgroupOfTargetDecoration"/>
-    <figures xsi:type="gmfgraph:PolylineDecoration" name="RelationshipRelatedTargetDecoration"/>
-    <figures xsi:type="gmfgraph:PolylineDecoration" name="CardinalityReferentTargetDecoration"/>
-    <descriptors name="EntityFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="EntityFigure">
-        <layout xsi:type="gmfgraph:FlowLayout"/>
-        <children xsi:type="gmfgraph:Label" name="EntityNameFigure" text="&lt;...>"/>
+<gmfgraph:Canvas
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
+    name="gedbm">
+  <figures
+      name="Default">
+    <figures
+        xsi:type="gmfgraph:CustomDecoration"
+        name="CircleDecoration"
+        qualifiedClassName="gedbm.diagram.figures.CircleDecoration"/>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="TriangleDecoration">
+      <backgroundColor
+          xsi:type="gmfgraph:RGBColor"
+          red="255"
+          green="255"
+          blue="255"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+    </figures>
+    <descriptors
+        name="EntityFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="EntityFigure">
+        <layout
+            xsi:type="gmfgraph:StackLayout"/>
+        <backgroundColor
+            xsi:type="gmfgraph:RGBColor"
+            red="253"
+            green="197"
+            blue="22"/>
+        <insets
+            left="10"
+            right="10"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="EntityNameFigure"
+            text=""/>
       </actualFigure>
-      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureEntityNameFigure"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="EntitySubgroupOfFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EntitySubgroupOfFigure" targetDecoration="//@figures.0/@figures.0"/>
+    <descriptors
+        name="EntityIsComposedFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="EntityIsComposedFigure"
+          targetDecoration="//@figures.0/@figures.0"/>
     </descriptors>
-    <descriptors name="RelationshipFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="RelationshipFigure">
-        <layout xsi:type="gmfgraph:FlowLayout"/>
-        <children xsi:type="gmfgraph:Label" name="RelationshipNameFigure" text="&lt;...>"/>
+    <descriptors
+        name="EntitySubgroupOfFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="EntitySubgroupOfFigure"
+          targetDecoration="//@figures.0/@figures.1"/>
+    </descriptors>
+    <descriptors
+        name="RelationshipFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Polygon"
+          name="RelationshipFigure">
+        <layout
+            xsi:type="gmfgraph:StackLayout"/>
+        <backgroundColor
+            xsi:type="gmfgraph:RGBColor"
+            red="180"
+            green="85"
+            blue="2"/>
+        <insets
+            left="10"
+            right="10"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="RelationshipNameFigure"/>
+        <template
+            x="30"/>
+        <template
+            y="30"/>
+        <template
+            x="30"
+            y="60"/>
+        <template
+            x="60"
+            y="30"/>
       </actualFigure>
-      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureRelationshipNameFigure"
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="RelationshipRelatedFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RelationshipRelatedFigure" targetDecoration="//@figures.0/@figures.1"/>
+    <descriptors
+        name="RelationshipIsConstraintFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="RelationshipIsConstraintFigure"/>
     </descriptors>
-    <descriptors name="CardinalityFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CardinalityFigure">
-        <children xsi:type="gmfgraph:Label" name="CardinalityLimitFigure" text="&lt;...>"/>
+    <descriptors
+        name="RelationshipIsMappingFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="RelationshipIsMappingFigure"
+          targetDecoration="//@figures.0/@figures.0"/>
+    </descriptors>
+    <descriptors
+        name="CardinalityFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="CardinalityFigure">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="CardinalityLimitFigure"
+            text="&lt;...>"/>
       </actualFigure>
-      <accessors figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="CardinalityReferentFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CardinalityReferentFigure" targetDecoration="//@figures.0/@figures.2"/>
+    <descriptors
+        name="CardinalityReferentFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="CardinalityReferentFigure"/>
+    </descriptors>
+    <descriptors
+        name="FieldFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="FieldFigure"
+          fill="false"
+          lineWidth="0">
+        <layout
+            xsi:type="gmfgraph:StackLayout"/>
+        <insets
+            top="4"
+            left="3"
+            bottom="4"
+            right="3"/>
+        <children
+            xsi:type="gmfgraph:VerticalLabel"
+            name="FieldNameFigure"/>
+      </actualFigure>
+      <accessors
+          accessor="getFigureFieldNameFigure"
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
-  <nodes name="Entity" figure="EntityFigure"/>
-  <nodes name="Relationship" figure="RelationshipFigure"/>
-  <connections name="EntitySubgroupOf" figure="EntitySubgroupOfFigure"/>
-  <connections name="RelationshipRelated" figure="RelationshipRelatedFigure"/>
-  <connections name="Cardinality" figure="CardinalityFigure"/>
-  <connections name="CardinalityReferent" figure="CardinalityReferentFigure"/>
-  <labels name="EntityName" figure="EntityFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels name="RelationshipName" figure="RelationshipFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
-  <labels name="CardinalityLimit" figure="CardinalityFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <nodes
+      name="Entity"
+      figure="EntityFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="30"
+          dy="40"/>
+    </facets>
+  </nodes>
+  <nodes
+      name="Relationship"
+      figure="RelationshipFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="60"
+          dy="60"/>
+    </facets>
+  </nodes>
+  <nodes
+      name="Field"
+      figure="FieldFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="15"
+          dy="20"/>
+    </facets>
+  </nodes>
+  <connections
+      name="EntityIsComposed"
+      figure="EntityIsComposedFigure"/>
+  <connections
+      name="EntitySubgroupOf"
+      figure="EntitySubgroupOfFigure"/>
+  <connections
+      name="RelationshipIsMapping"
+      figure="RelationshipIsMappingFigure"/>
+  <connections
+      name="Cardinality"
+      figure="CardinalityFigure"/>
+  <labels
+      name="EntityName"
+      figure="EntityFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels
+      name="RelationshipName"
+      figure="RelationshipFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels
+      name="CardinalityLimit"
+      figure="CardinalityFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.6/@accessors.0"/>
+  <labels
+      name="FieldName"
+      figure="FieldFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
 </gmfgraph:Canvas>

@@ -1,0 +1,10 @@
+import Schema2Database;
+	
+modeltype gedbm uses gedbm('http://br.cefet.rj.mda.gedbm');
+modeltype omtg uses omtg('http://www.ifc-camboriu.edu.br/~frozza/omtg');
+
+transformation omtg2gedbm( in omtgModel : omtg, out gedbmModel : gedbm );
+
+main() {
+omtgModel.rootObjects()[omtg::Schema]->map Schema2Database();
+}
