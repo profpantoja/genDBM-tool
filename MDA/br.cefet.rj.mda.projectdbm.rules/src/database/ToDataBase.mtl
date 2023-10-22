@@ -1,0 +1,12 @@
+[comment encoding = UTF-8 /]
+[module ToDataBase('http://br.cefet.rj.mda.gedbm')]
+
+[import database::entity::PrintPrecedenceA/]
+[import database::entity::PrintPrecedenceB/]
+[import database::relationship::CreateAssociativeTable /]
+
+[template public ToDataBase(aDataBase : DataBase)]
+CREATE DATABASE [aDataBase.name/];
+
+[PrintPrecedenceA(aDataBase.name,aDataBase.isComposed)/][PrintPrecedenceB(aDataBase.name, aDataBase.isComposed)/][CreateAssociativeTable(aDataBase.name,aDataBase.hasInteraction)/]
+[/template]

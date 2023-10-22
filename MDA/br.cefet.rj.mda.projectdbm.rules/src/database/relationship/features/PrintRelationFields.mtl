@@ -1,0 +1,8 @@
+[comment encoding = UTF-8 /]
+[module PrintRelationFields('http://br.cefet.rj.mda.gedbm')]
+
+[import database::entity::field::ToField /]
+
+[template public PrintRelationFields(aRelationship : Relationship)]
+[if (aRelationship.isMapping<>null)][ToField(aRelationship.isMapping)/][/if]
+[/template]

@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module PrintPrimaryKey('http://br.cefet.rj.mda.gedbm')]
+
+[template public PrintPrimary(aPrimaryKeys : OrderedSet(PrimaryKey))]
+[for (iPrimaryKey : PrimaryKey | aPrimaryKeys)]
+CONSTRAINT [iPrimaryKey.name/] PRIMARY KEY ([for (aName : String |iPrimaryKey.isPrimary.name) separator(',')][aName/][/for])[if (iPrimaryKey.followingSiblings(PrimaryKey)->notEmpty())],[/if][/for]
+[/template]

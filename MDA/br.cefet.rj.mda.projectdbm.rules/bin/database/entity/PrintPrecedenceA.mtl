@@ -1,0 +1,12 @@
+[comment encoding = UTF-8 /]
+[module PrintPrecedenceA('http://br.cefet.rj.mda.gedbm')]
+
+[import database::entity::PrintEntityWithoutForeign /]
+
+[template public PrintPrecedenceA(aDataBaseName : String, aEntity : OrderedSet(Entity))]
+[for (iEntity : Entity | aEntity)]
+[if (iEntity.hasForeignKey->isEmpty())]
+[PrintEntityWithoutForeign(aDataBaseName,iEntity)/]	
+[/if]
+[/for]
+[/template] 

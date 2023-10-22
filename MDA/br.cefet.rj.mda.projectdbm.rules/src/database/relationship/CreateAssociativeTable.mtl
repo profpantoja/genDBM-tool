@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[module CreateAssociativeTable('http://br.cefet.rj.mda.gedbm')]
+
+[import database::entity::key::PrintPrimaryKey /]
+[import database::entity::key::PrintForeignKeyNpN /]
+[import database::relationship::features::PrintRelationCharacteristics /]
+[import database::relationship::features::PrintRelationFields /]
+
+
+[comment 
+*** Nesse Template são geradas as tabelas associativas (N-N). 
+Obrigatoriamente a tabela deve conter 1 chave primária e 2 chaves estrangeiras pelo menos.***
+/]
+[template public CreateAssociativeTable(aDataBaseName : String, aRelations : OrderedSet(Relationship))]
+[for (iRelation : Relationship | aRelations)]
+[if (iRelation.isAssociative = true)]
+CREATE TABLE [aDataBaseName/].[iRelation.name/] (
+	[PrintRelationCharacteristics(iRelation.related)/][PrintRelationFields(iRelation)/][PrintPrimary(iRelation.wouldHasPrimary)/],
+	[PrintForeignKeyFieldsN_N(iRelation)/]
+);
+
+[/if]
+[/for]
+[/template]

@@ -1,0 +1,13 @@
+[comment encoding = UTF-8 /]
+[module ToField('http://br.cefet.rj.mda.gedbm')]
+
+[import database::entity::field::features::PrintNumericLimit /]
+[import database::entity::field::features::PrintTextLimit /]
+[import database::entity::field::features::PrintDefaultValue /]
+[import database::entity::field::features::PrintIntegrity /]
+
+[template public ToField(aFields : OrderedSet(Field))]
+[for (iField : Field | aFields)]
+[iField.name/] [iField.type/][if (iField.hasNumericLimit <> null)][PrintNumericLimit(iField.hasNumericLimit)/][/if][if (iField.hasTextLimit<>null)][PrintTextLimit(iField.hasTextLimit)/][/if][if (iField.hasIntegrity<>null)][PrintIntegrity(iField.hasIntegrity)/][/if][if (iField.hasDefaultValue <> null)][PrintDefaultValue(iField.hasDefaultValue)/][/if],
+[/for]
+[/template]

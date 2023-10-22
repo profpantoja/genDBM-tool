@@ -1,0 +1,8 @@
+[comment encoding = UTF-8 /]
+[module PrintCandidateKey('http://br.cefet.rj.mda.gedbm')]
+
+[import database::entity::field::ToField /]
+
+[template public PrintCandidateKey(aEntity : Entity)]
+[for (iPrimary : PrimaryKey | aEntity.hasPrimaryKey)][ToField(iPrimary.isPrimary)/][/for]
+[/template]

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="1006" class="br.cefet.rj.mda.projectdbm.rules.ui.Activator" localization="OSGI-INF/l10n/bundle" name="Acceleo ProjectDbm Module IDE Plug-in" project="br.cefet.rj.mda.projectdbm.rules.ui" provider="Eclipse Modeling Project"/>
+	<bundle bundleID="1003" class="gedbm.presentation.GedbmEditorPlugin$Implementation" localization="plugin" name="%pluginName" project="br.cefet.rj.mda.gedbm.editor" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1002" class="gedbm.provider.GedbmEditPlugin$Implementation" localization="plugin" name="%pluginName" project="br.cefet.rj.mda.gedbm.edit" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1001" localization="plugin" name="%pluginName" project="br.cefet.rj.mda.gedbm" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1005" class="br.cefet.rj.mda.projectdbm.rules.Activator" localization="OSGI-INF/l10n/bundle" name="Acceleo Rules Module Runtime Plug-in" project="br.cefet.rj.mda.projectdbm.rules" provider="Eclipse Modeling Project"/>
+	<bundle bundleID="1004" localization="plugin" name="%pluginName" project="br.cefet.rj.mda.gedbm.tests" provider="%providerName">
+		<library name="."/>
+	</bundle>
+</map>

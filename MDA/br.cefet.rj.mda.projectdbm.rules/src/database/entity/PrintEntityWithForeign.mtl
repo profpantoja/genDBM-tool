@@ -1,0 +1,19 @@
+[comment encoding = UTF-8 /]
+[module PrintEntityWithForeign('http://br.cefet.rj.mda.gedbm')]
+
+[import database::entity::key::PrintPrimaryKey/]
+[import database::entity::key::PrintForeignKey/]
+[import database::entity::field::features::PrintCheck/]
+[import database::entity::field::ToField/]
+
+[comment 
+*** Nesse Template são geradas as tabelas que possuem chave estrangeira (1-N / N-1). 
+Obrigatoriamente a tabela deve conter 1 chave primária e 1 chave estrangeira pelo menos.***
+/]
+[template public PrintEntityWithForeign(aDataBaseName : String, aEntity : Entity)]
+[for (iEntity : Entity | aEntity) after(');')]
+CREATE TABLE [aDataBaseName/].[iEntity.name/] (
+	[ToField(iEntity.isComposed)/][PrintPrimary(iEntity.hasPrimaryKey)/],[PrintForeign(iEntity.hasForeignKey)/][if (iEntity.hasCheck->notEmpty())],[/if][PrintCheck(iEntity.hasCheck)/]
+[/for]
+
+[/template]

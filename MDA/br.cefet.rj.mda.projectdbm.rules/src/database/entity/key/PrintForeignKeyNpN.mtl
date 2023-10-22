@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module PrintForeignKeyNpN('http://br.cefet.rj.mda.gedbm')]
+
+[import database::entity::key::features::PrintReferences /]
+
+[template public PrintForeignKeyFieldsN_N ( aRelation: Relationship)]	
+[for (iForeign : ForeignKey | aRelation.wouldHasForeign)]
+CONSTRAINT [iForeign.name/] FOREIGN KEY ([iForeign.refersTo.isPrimary.name/]) [PrintReferences(iForeign)/][if (iForeign.followingSiblings(ForeignKey)->size() > 0)],[/if]
+[/for]
+[/template]

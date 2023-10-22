@@ -1,0 +1,6 @@
+[comment encoding = UTF-8 /]
+[module PrintReferences('http://br.cefet.rj.mda.gedbm')]
+
+[template public PrintReferences(aForeign : ForeignKey)]
+REFERENCES [aForeign.References.name/] ([aForeign.refersTo.isPrimary.name/])
+[/template]

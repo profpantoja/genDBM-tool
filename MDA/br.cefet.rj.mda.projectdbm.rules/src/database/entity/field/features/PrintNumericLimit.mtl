@@ -1,0 +1,6 @@
+[comment encoding = UTF-8 /]
+[module PrintNumericLimit('http://br.cefet.rj.mda.gedbm')]
+
+[template public PrintNumericLimit(aNumeric : NumericLimit)]
+([aNumeric.limit_value/])
+[/template]

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+      		adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.gedbm"
+            id="br.cefet.rj.mda.projectdbm.rules.ui.popupMenus.contribution.IFile">
+         <menu id="org.eclipse.acceleo.module.menu" label="Project DBM">
+               <groupMarker name="acceleo"/> 
+         </menu>
+         <action
+               label="ANSI SQL 92"
+               tooltip="Generates the ANSI SQL 92 codification"
+               class="br.cefet.rj.mda.projectdbm.rules.ui.popupMenus.AcceleoGenerateProjectDbmAction"
+               icon="icons/default.gif"
+               menubarPath="org.eclipse.acceleo.module.menu/acceleo"
+      		   id="br.cefet.rj.mda.projectdbm.rules.ui.popupMenus.acceleoGenerateProjectDbmAction"
+      		   enablesFor="+"/>
+      </objectContribution>
+   </extension>
+</plugin>

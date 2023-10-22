@@ -1,0 +1,6 @@
+[comment encoding = UTF-8 /]
+[module PrintDefaultValue('http://br.cefet.rj.mda.gedbm')]
+
+[template public PrintDefaultValue(aDefault : DefaultValue)]
+ DEFAULT '[aDefault.value/]'
+[/template]

@@ -1,0 +1,6 @@
+[comment encoding = UTF-8 /]
+[module PrintIntegrity('http://br.cefet.rj.mda.gedbm')]
+
+[template public PrintIntegrity(aIntegrity : Integrity)]
+ [if (aIntegrity.not_null=true)]NOT NULL [/if][if (aIntegrity.unique=true)]UNIQUE[/if]
+[/template]

@@ -1,0 +1,8 @@
+[comment encoding = UTF-8 /]
+[module PrintCheck('http://br.cefet.rj.mda.gedbm')]
+
+[template public PrintCheck(aCheck : OrderedSet(Check))]
+[for (iCheck : Check | aCheck) after(' ')]	
+
+CONSTRAINT [iCheck.name/] CHECK ([iCheck.condition/])[/for]
+[/template]
